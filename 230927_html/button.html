@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="command-1" class="btn btn-1">提交</button>
+      <button onclick="alert('nice to meet you')" class="btn btn-2">
+        指令二
+      </button>
+      <button id="command-3" class="btn btn-3">指令三</button>
+    </div>
+    <ul class="element-1">
+      <li class="element-2"></li>
+      <li class="element-2"></li>
+      <li class="element-2"></li>
+    </ul>
+    <script>
+      /**
+       * js变量声明两种方式
+       * 1、var a = 1;
+       * 2、let b = 'word';
+       * js基本数据类型
+       * 1、undefined 未定义 2、null 空 3、string 字符串 4、number 数字
+       * 5、boolean 布尔值
+       * js高级数据类型
+       * 1、object 对象
+       */
+
+      var btn1 = document.getElementById("command-1");
+
+      btn1.onclick = btn1click;
+      var obj = {
+        a: "已提交",
+        b: null,
+      };
+      // alert(obj.a);
+      function btn1click() {
+        btn1.innerHTML = obj.a;
+      }
+      var btn3 = document.getElementById("command-3");
+      btn3.onclick = function () {
+        var result = confirm("请选择");
+        alert(result);
+      };
+      var btn4 = 1;
+      alert(btn4);
+    </script>
+  </body>
+</html>

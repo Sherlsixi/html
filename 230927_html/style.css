@@ -1,0 +1,41 @@
+.container {
+  width: 280px;
+  /* marigin auto表示元素居中 */
+  margin: 40px auto 0;
+}
+.btn {
+  width: 80px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.btn.btn-1 {
+  background: #c03838;
+}
+.btn.btn-2 {
+  background: #38c08c;
+}
+.btn.btn-3 {
+  background: #4638c0;
+}
+.btn.btn-1:hover {
+  background: #e98282;
+}
+.btn.btn-2:hover {
+  background: #8cebc6;
+}
+.btn.btn-3:hover {
+  background: #8b81e4;
+}
+.btn.btn-1:active {
+  background: #830c0c;
+}
+.btn.btn-2:active {
+  background: #0a5e3e;
+}
+.btn.btn-3:active {
+  background: #170d72;
+}
