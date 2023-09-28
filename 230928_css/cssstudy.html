@@ -1,15 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-   <div>
-    <button>指令一</button>
-    <button>指令二</button>
-    <button>指令三</button>
-</div>
-</body>
+    <style>
+      #box-1,
+      .box-2 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        display: inline-block;
+        /* float:left 浮动靠左 文本环绕*/
+      }
+      .inner-box.box-3 {
+        width: 50px;
+        height: 50px;
+        background: rgb(142, 73, 211);
+      }
+      p.box-3 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+      }
+
+      a:link {
+        color: rgb(1, 233, 90);
+      }
+      a:visited {
+        color: rgb(73, 196, 245);
+      }
+      /* ul + p {
+        color: aqua;
+      } */
+      .main-container {
+        position: relative;
+      }
+      .main-container > ul {
+        width: 200px;
+        background: rgb(205, 247, 211);
+        position: absolute;
+        display: none;
+      }
+      ul > :nth-child(3) {
+        font-size: 20px;
+        color: rgb(8, 131, 69);
+      }
+
+      #btn-1:hover + ul {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>指令一</button>
+      <button>指令二</button>
+      <button>指令三</button>
+    </div>
+    <div id="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <p class="box-3 inner-box"></p>
+    <a href="https://www.bilibili.com/" target="_blank">
+      随便测试一下点击链接
+    </a>
+    <a href="https://www.baidu.com?a=132" target="_blank">
+      再测试一下点击链接
+    </a>
+
+    <div class="main-container">
+      <button id="btn-1">点击一下</button>
+      <ul>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+      </ul>
+    </div>
+    <p>hello</p>
+  </body>
 </html>
