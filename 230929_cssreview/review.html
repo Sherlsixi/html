@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-container {
+        width: 400px;
+        height: 300px;
+        background: burlywood;
+        position: relative;
+        padding-top: 140px;
+        box-sizing: border-box;
+      }
+      .btn-1 {
+        height: 20px;
+      }
+      .main-container > ul {
+        width: 300px;
+        background: rgb(161, 238, 161);
+        position: absolute;
+        display: none;
+        top: 112px;
+        left: 40px;
+        margin: 0;
+      }
+      .btn-1:hover + ul {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <button class="btn-1">点击</button>
+      <ul>
+        <li>活动列表</li>
+        <li>活动列表</li>
+        <li>活动列表</li>
+        <li>活动列表</li>
+      </ul>
+    </div>
+  </body>
+</html>
