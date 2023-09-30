@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 440px;
+        margin: 60px auto 0;
+        padding: 20px;
+        border: 1px solid rgb(241, 161, 161);
+      }
+      .container > .input-group {
+        height: 90px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      .container .input-group-row {
+        height: 45px;
+        padding: 10px 20px;
+      }
+      .container .input-group-row:first-child {
+        border-bottom: 1px solid #ccc;
+      }
+      .container .input-group-row label {
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+      }
+      .container .input-group-row input {
+        border: none;
+        width: 276px;
+        height: 20px;
+        outline: none;
+        font-size: 14px;
+      }
+      .container .input-group-row input:focus {
+        background: rgb(178, 224, 255);
+      }
+      .container .btn-group {
+        margin-top: 20px;
+      }
+      .container .btn-group button {
+        width: 192px;
+        height: 40px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .container .btn-group > :first-child {
+        margin-right: 9px;
+      }
+      .container .btn-group > :last-child {
+        background: rgb(79, 185, 255);
+        color: #fff;
+        border-color: rgb(79, 185, 255);
+      }
+      .container .btn-group > :last-child:hover {
+        background: rgb(117, 193, 255);
+        border-color: rgb(117, 193, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-group">
+        <div class="input-group-row">
+          <label for="username">账号</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="请输入账号"
+            required
+          />
+        </div>
+        <div class="input-group-row">
+          <label for="password">密码</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="请输入密码"
+            required
+          />
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button">注册</button>
+        <button type="submit">登录</button>
+      </div>
+    </div>
+  </body>
+</html>
