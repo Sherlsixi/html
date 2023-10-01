@@ -9,36 +9,37 @@
         box-sizing: border-box;
       }
       .container {
+        display: flex;
         width: 950px;
         height: 520px;
         border: 1px solid #ccc;
         /* margin-right: 10px; */
-        display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-content: space-between;
       }
       .container .element-1 .item-1 {
+        display: flex;
         width: 300px;
         height: 170px;
         background: rgb(198, 218, 255);
         border-radius: 8px;
-        display: flex;
         overflow: hidden;
       }
       .container .element-1 .item-1:hover .video-card {
         display: none;
       }
       .element-1 .item-1 .video-card {
+        display: flex;
         width: 300px;
         height: 38px;
         background: rgba(0, 0, 0, 0.3);
         color: #fff;
         align-self: flex-end;
-        display: flex;
         justify-content: space-between;
         align-items: center;
       }
+
       .container .element-1 p {
         width: 265px;
         margin-bottom: 5px;
@@ -46,12 +47,20 @@
       .container .element-1 .card-info {
         display: flex;
       }
-      .up-info {
-        width: 17px;
-        height: 17px;
+      .container .card-info .up-info {
+        /* width: 17px;
+        height: 17px; */
+        padding: 2px 4px;
         background: #ffcfa8;
-        float: left;
+        /* float: left; */
         align-self: flex-end;
+        color: #ff7f24;
+        font-size: 12px;
+        border-radius: 2px;
+        margin-right: 4px;
+      }
+      .container .element-1 .card-info span {
+        margin-right: 4px;
       }
     </style>
   </head>
@@ -69,7 +78,7 @@
         </div>
         <p>数字化转型，如何争取业务配合 总觉得自己很弱不敢下山</p>
         <div class="card-info">
-          <div class="up-info"></div>
+          <div class="up-info">已关注</div>
           <span>四夕sherl</span>
           <span>.9-29</span>
         </div>
