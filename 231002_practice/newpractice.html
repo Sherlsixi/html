@@ -1,22 +1,145 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .container .element-1 .item-1{
-            width: 300px;
-            height: 200px;
-            background: #f1d6a7;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        padding: 40px 0;
+        overflow: hidden;
+      }
+
+      .container .header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: #e4e4e4;
+        justify-content: center;
+      }
+      .container .header .function-btn {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        position: absolute;
+        right: 10px;
+      }
+      /* .container .list {
+        height: 100%;
+        overflow: scroll;
+      } */
+      .container .list .search-row {
+        height: 40px;
+        background: #e4e4e4;
+        padding: 5px;
+      }
+      .list .search-row input {
+        width: 100%;
+        height: 25px;
+        border: none;
+        border-radius: 4px;
+      }
+      .list .search-row ::placeholder {
+        text-align: center;
+      }
+
+      .list .list-item {
+        display: flex;
+        position: relative;
+        height: 60px;
+        background: #fff;
+        border-bottom: 1px solid #e4e4e4;
+        align-items: center;
+        padding: 10px;
+      }
+      .list .list-item::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 60px;
+        height: 1px;
+        background: #fff;
+      }
+      .list .list-item .pic-box {
+        width: 40px;
+        height: 40px;
+        background: #bbe1ff;
+        border-radius: 4px;
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+      .list .list-item .chat-box {
+        width: 100%;
+      }
+      .list-item .chat-box .title-row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .list-item .chat-box .content-row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .chat-box .content-row .message-status {
+        width: 20px;
+        height: 20px;
+        background: #ccc;
+      }
+      .container .card-button {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: #e4e4e4;
+        justify-content: space-around;
+        align-items: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="element-1">
-            <div class="item-1"></div>
+      <div class="header">
+        <div class="item-1">微信</div>
+        <div class="function-btn"></div>
+      </div>
+      <div class="list">
+        <div class="search-row">
+          <input type="text" placeholder="搜索" />
         </div>
+        <div class="list-item">
+          <div class="pic-box"></div>
+          <div class="chat-box">
+            <div class="title-row">
+              <div class="title-text">烁烁子</div>
+              <div class="message-time">16:58</div>
+            </div>
+            <div class="content-row">
+              <div class="message-new">[4条]我要跑路咯</div>
+              <div class="message-status"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-button">
+        <span>微信</span>
+        <span>通讯录</span>
+        <span>发现</span>
+        <span>我</span>
+      </div>
     </div>
-</body>
+  </body>
 </html>
