@@ -51,6 +51,8 @@
         height: 25px;
         border: none;
         border-radius: 4px;
+        caret-color: rgb(94, 233, 94);
+        outline: none;
       }
       .list .search-row ::placeholder {
         text-align: center;
@@ -152,6 +154,9 @@
         flex-direction: column;
         align-items: center;
       }
+      /* .container .card-button .wechat:active {
+        color: rgb(60, 196, 60);
+      } */
       .card-button .wechat .wechat-icon {
         width: 18px;
         height: 16px;
@@ -166,6 +171,22 @@
         height: 18px;
       }
       .contacts .contacts-icon img {
+        width: 100%;
+        height: 100%;
+      }
+      .card-button .discover .discover-icon{
+        width: 20px;
+        height: 18px;
+      }
+      .discover .discover-icon img{
+        width: 100%;
+        height: 100%;
+      }
+      .card-button .user .user-icon{
+        width: 18px;
+        height: 16px;
+      }
+      .user .user-icon img{
         width: 100%;
         height: 100%;
       }
@@ -235,9 +256,19 @@
           </div>
           <span>通讯录</span>
         </div>
-
-        <span>发现</span>
-        <span>我</span>
+        <div class="discover">
+          <div class="discover-icon">
+            <img src="icons/compass.png" alt="">
+          </div>
+          <span>发现</span>
+        </div>
+        <div class="user">
+          <div class="user-icon">
+            <img src="icons/user.png" alt="">
+          </div>
+          <span>我</span>
+        </div>
+        
       </div>
     </div>
   </body>
