@@ -14,7 +14,7 @@
       .container {
         position: relative;
         width: 100%;
-        padding: 40px 0;
+        padding: 40px 0 60px;
         overflow: hidden;
       }
 
@@ -27,6 +27,8 @@
         height: 40px;
         background: #e4e4e4;
         justify-content: center;
+        align-items: center;
+        font-weight: 600;
       }
       .container .header .function-btn {
         width: 20px;
@@ -73,6 +75,7 @@
         background: #fff;
       }
       .list .list-item .pic-box {
+        position: relative;
         width: 40px;
         height: 40px;
         background: #bbe1ff;
@@ -80,6 +83,7 @@
         margin-right: 10px;
         flex-shrink: 0;
       }
+
       .list .list-item .chat-box {
         width: 100%;
       }
@@ -87,14 +91,45 @@
         display: flex;
         justify-content: space-between;
       }
+      .chat-box .title-row .message-time {
+        color: #999;
+        font-size: 10px;
+      }
       .list-item .chat-box .content-row {
         display: flex;
         justify-content: space-between;
       }
+      .chat-box .content-row .message-new {
+        color: #999;
+        font-size: 12px;
+      }
       .chat-box .content-row .message-status {
-        width: 20px;
-        height: 20px;
+        width: 12px;
+        height: 12px;
         background: #ccc;
+      }
+
+      .list .list-item .pic-box.has-message::after {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        width: 8px;
+        height: 8px;
+        background: red;
+        border-radius: 50%;
+      }
+      .list .list-item .pic-box.count-message::after {
+        content: "19";
+        position: absolute;
+        right: -4px;
+        top: -4px;
+        padding: 0 4px;
+        background: red;
+        border-radius: 6.5px;
+        color: #fff;
+        text-align: center;
+        font-size: 9px;
       }
       .container .card-button {
         display: flex;
@@ -102,17 +137,41 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 40px;
+        height: 60px;
         background: #e4e4e4;
         justify-content: space-around;
         align-items: center;
+      }
+      .container .card-button {
+        /* display: flex;
+        align-items: center; */
+        font-size: 10px;
+      }
+      .card-button .wechat .wechat-icon {
+        width: 18px;
+        height: 16px;
+      }
+      .wechat .wechat-icon img {
+        width: 100%;
+        height: 100%;
+      }
+      /* .card-button .card-button .contacts {
+        display: flex;
+      } */
+      .card-button .contacts .contacts-icon {
+        width: 20px;
+        height: 18px;
+      }
+      .contacts .contacts-icon img {
+        width: 100%;
+        height: 100%;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <div class="item-1">微信</div>
+        <div class="header-text">微信</div>
         <div class="function-btn"></div>
       </div>
       <div class="list">
@@ -127,7 +186,33 @@
               <div class="message-time">16:58</div>
             </div>
             <div class="content-row">
-              <div class="message-new">[4条]我要跑路咯</div>
+              <div class="message-new">我要跑路咯</div>
+              <div class="message-status"></div>
+            </div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="pic-box has-message"></div>
+          <div class="chat-box">
+            <div class="title-row">
+              <div class="title-text">烁烁子</div>
+              <div class="message-time">16:58</div>
+            </div>
+            <div class="content-row">
+              <div class="message-new">我要跑路咯</div>
+              <div class="message-status"></div>
+            </div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="pic-box count-message"></div>
+          <div class="chat-box">
+            <div class="title-row">
+              <div class="title-text">烁烁子</div>
+              <div class="message-time">16:58</div>
+            </div>
+            <div class="content-row">
+              <div class="message-new">[19条]我要跑路咯</div>
               <div class="message-status"></div>
             </div>
           </div>
@@ -135,8 +220,19 @@
       </div>
 
       <div class="card-button">
-        <span>微信</span>
-        <span>通讯录</span>
+        <div class="wechat">
+          <div class="wechat-icon">
+            <img src="icons/chat.png" alt="" />
+          </div>
+          <span>微信</span>
+        </div>
+        <div class="contacts">
+          <div class="contacts-icon">
+            <img src="icons/contact-book.png" alt="" />
+          </div>
+          <span>通讯录</span>
+        </div>
+
         <span>发现</span>
         <span>我</span>
       </div>
