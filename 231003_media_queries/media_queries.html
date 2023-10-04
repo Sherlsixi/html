@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+      }
+      .container .video-box .video {
+        display: flex;
+        width: 100%;
+        height: 300px;
+        background: rgb(175, 226, 255);
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 6px;
+        border-radius: 10px;
+      }
+      .container .video-box .video:hover .video-time {
+        display: none;
+      }
+      .video-box .video .video-time {
+        display: flex;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        font-size: 10px;
+        line-height: 10px;
+        padding: 3px 4px;
+      }
+
+      .container .video-box .title-box {
+        display: flex;
+        margin-top: 10px;
+      }
+      .container .video-box .title-box .pic-box {
+        width: 30px;
+        height: 30px;
+        background: rgb(255, 191, 96);
+        border-radius: 50%;
+      }
+      .video-box .title-box .title {
+        margin-left: 10px;
+      }
+      .title-box .title .title-text {
+        font-weight: 600;
+      }
+      .title-box .title .up-name {
+        font-size: 12px;
+      }
+      .title-box .title .title-bottom {
+        display: flex;
+        font-size: 12px;
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 1200px;
+          margin: 0 auto;
+          padding: 15px 10px;
+          flex-wrap: wrap;
+        }
+        .container .video-box {
+          width: calc(20% - 10px);
+          margin: 0 5px 20px;
+        }
+        .container .video-box .video {
+          height: 160px;
+        }
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .container {
+          padding: 15px 10px;
+          flex-wrap: wrap;
+        }
+        .container .video-box {
+          width: calc(25% - 10px);
+          margin: 0 5px 20px;
+        }
+        .container .video-box .video {
+          height: 190px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .container {
+          padding: 15px 10px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .container .video-box {
+          width: calc(33% - 10px);
+          margin-bottom: 20px;
+        }
+        .container .video-box .video {
+          height: 190px;
+        }
+      }
+      @media (min-width: 480px) and (max-width: 767px) {
+        .container {
+          padding: 15px 10px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .container .video-box {
+          width: calc(50% - 10px);
+          margin-bottom: 20px;
+        }
+        .container .video-box .video {
+          height: 187px;
+        }
+      }
+      @media (max-width: 479px) {
+        .container {
+          padding: 15px 10px;
+          flex-direction: column;
+        }
+        .container .video-box {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .container .video-box .video {
+          width: 100%;
+          height: 266px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-box">
+        <div class="video">
+          <div class="video-time">
+            <span>29:09</span>
+          </div>
+        </div>
+        <div class="title-box">
+          <div class="pic-box"></div>
+          <div class="title">
+            <div class="title-text">美国人最日常的对话，简单却很地道</div>
+            <div class="up-name">zaharaEnglish</div>
+            <div class="title-bottom">
+              <div class="count-views">14万次观看</div>
+              <div class="upload-time">・2个月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
