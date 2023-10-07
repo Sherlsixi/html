@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .container .btn-1 {
+        width: 50px;
+        height: 50px;
+        background: rgb(255, 174, 174);
+        border-radius: 50%;
+        border: none;
+        transition: 0.3s;
+      }
+      .container .list-card {
+        width: 200px;
+        height: 300px;
+        background: rgb(206, 255, 206);
+        opacity: 0;
+        border-radius: 5px;
+        transition: 2s;
+      }
+      .container .btn-1:hover {
+        transition: 2s;
+        width: 80px;
+        height: 80px;
+      }
+      .btn-1:hover + .list-card {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn-1"></button>
+      <div class="list-card"></div>
+    </div>
+  </body>
+</html>

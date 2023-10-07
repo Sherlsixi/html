@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: rgb(88, 72, 72);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul {
+        width: 400px;
+        height: 300px;
+        display: flex;
+        position: relative;
+      }
+      li {
+        flex: 1;
+        list-style: none;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+      li::before {
+        content: "xiaoxiao";
+        color: #fff;
+        opacity: 0.5;
+      }
+      ul::before {
+        content: "start";
+        width: 200px;
+        height: 100px;
+        background: red;
+        color: #fff;
+        font-size: 2em;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* transition-duration: 1s; */
+        transition-timing-function: step-start;
+        /* steps(1,start) */
+        z-index: 2;
+      }
+      ul::after {
+        content: "end";
+        width: 200px;
+        height: 100px;
+        background: rgb(231, 138, 231);
+        color: #fff;
+        font-size: 2em;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition-duration: 1s;
+        transition-timing-function: step-end;
+        z-index: 2;
+      }
+      ul:hover::before {
+        transform: translateX(200px);
+      }
+      ul:hover::after {
+        transform: translateX(200px);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
