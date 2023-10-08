@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: rgb(112, 112, 172);
+      }
+      .clock {
+        width: 200px;
+        height: 200px;
+        background: #fff;
+        border-radius: 50%;
+        position: relative;
+      }
+      .clock::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+      }
+      .clock .pointer {
+        width: 2px;
+        height: 50%;
+        background: #000;
+        position: absolute;
+        left: calc(50% - 1px);
+        transform-origin: bottom;
+        animation-name: myanimation;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .clock .pointer.hour-pointer {
+        height: 30%;
+        background: red;
+        top: 20%;
+        animation-duration: 43200s;
+        z-index: 1;
+      }
+      .clock .pointer.minute-pointer {
+        height: 40%;
+        background: rgb(8, 228, 0);
+        top: 10%;
+        animation-duration: 3600s;
+        z-index: 2;
+      }
+      .clock .pointer.second-pointer {
+        animation-duration: 60s;
+        z-index: 3;
+      }
+      @keyframes myanimation {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="pointer hour-pointer"></div>
+      <div class="pointer minute-pointer"></div>
+      <div class="pointer second-pointer"></div>
+    </div>
+  </body>
+</html>

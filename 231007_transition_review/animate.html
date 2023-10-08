@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(106, 106, 170);
+      }
+      .square {
+        width: 200px;
+        height: 200px;
+        background: rgb(255, 193, 60);
+      }
+      @keyframes myanimation {
+        0% {
+          width: 100px;
+        }
+        50% {
+          width: 200px;
+        }
+        100% {
+          width: 300px;
+        }
+      }
+      @keyframes clock-animation {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .square {
+        animation: myanimation 2s ease-in-out;
+      }
+      .clock {
+        width: 200px;
+        height: 200px;
+        background: #fff;
+        border-radius: 50%;
+        position: relative;
+      }
+      .clock::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+      }
+      .clock .pointer {
+        width: 2px;
+        height: 50%;
+        background: #000;
+        position: absolute;
+        left: calc(50% - 1px);
+        transform-origin: bottom;
+        animation-name: clock-animation;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .clock .pointer.hour-pointer {
+        height: 30%;
+        background: red;
+        animation-duration: 43200s;
+        top: 20%;
+        z-index: 1;
+      }
+      .clock .pointer.minute-pointer {
+        height: 40%;
+        background: green;
+        animation-duration: 3600s;
+        top: 10%;
+        z-index: 2;
+      }
+      .clock .pointer.second-pointer {
+        animation-duration: 60s;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square"></div>
+    <div class="clock">
+      <div class="pointer hour-pointer"></div>
+      <div class="pointer minute-pointer"></div>
+      <div class="pointer second-pointer"></div>
+    </div>
+  </body>
+</html>

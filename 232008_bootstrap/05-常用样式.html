@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用样式</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+  </head>
+  <body>
+    <!-- 1.列表
+         2.代码
+         （1）<code></code>显示单行内联代码
+         （2）<pre></pre>多行内联代码
+         （3）<kbd></kbd>显示用户输入代码，如快捷键
+     -->
+    <ul>
+      <li>无序项目列表一</li>
+      <li>无序项目列表二</li>
+    </ul>
+    <ol>
+      <li>有序项目列表一</li>
+      <li>有序项目列表二</li>
+    </ol>
+    <dl>
+      <dt>html</dt>
+      <dd>超文本标记语言</dd>
+      <dt>css</dt>
+      <dd>层叠样式</dd>
+    </dl>
+    <hr />
+    <!-- 去点列表 -->
+    <ul class="list-unstyled">
+      <li>无序项目列表一</li>
+      <li>无序项目列表二</li>
+    </ul>
+    <hr />
+    <!-- 内联列表 -->
+    <ul class="list-inline">
+      <li>首页</li>
+      <li>在线课堂</li>
+      <li>java</li>
+    </ul>
+    <hr />
+    <!-- 自定义列表 内联列表 -->
+    <dl class="dl-horizontal">
+      <dt>html 超文本标记语言</dt>
+      <dd>超文本标记语言，是一种标识性的语言</dd>
+      <dt>测试标题不能超过160px的宽度，否则会变成两个点</dt>
+      <dd>
+        层叠样式，我在写一个水平定义列表的效果，我在写一个水平定义列表的效果
+      </dd>
+    </dl>
+    <hr />
+    <br />
+    <!-- 单行内联代码 -->
+    Sample text here...
+    <br />
+    <code>Sample text here...</code>
+    <br />
+    <code>
+      Sample text here...<br />
+      Sample text here...
+    </code>
+    <!-- 快捷键 -->
+    <p>使用ctrl+s保存内容</p>
+    <p>使用<kbd>ctrl</kbd>+<kbd>s</kbd>保存内容</p>
+    <!-- 多行代码  代码会保留原本的格式，包括空格和回车-->
+    <pre>
+    >Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit.
+       Integer posuere erat a ante.
+    </pre>
+    <!-- 显示html代码需要使用字符实体 -->
+    <pre>
+      &lt;h2&gt;你好&lt;/h2&gt;
+    </pre>
+    <!-- 当长度超过指定值，可以添加滚动条 -->
+    <pre class="pre-scrollable">
+      <ol>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+        <li>加滚动条</li>
+      </ol>
+    </pre>
+    <hr />
+    <!-- 表格 -->
+    <table
+      class="table table-bordered table-striped table-hover table-condensed"
+    >
+      <tr class="active">
+        <th>javaSE</th>
+        <th>数据库</th>
+        <th>JavaScript</th>
+      </tr>
+      <tr class="success">
+        <td>面向对象</td>
+        <td>oracle</td>
+        <td>json</td>
+      </tr>
+      <tr class="warning">
+        <td>数组</td>
+        <td>mysql</td>
+        <td>ajax</td>
+      </tr>
+      <tr class="danger">
+        <th>javaSE</th>
+        <th>数据库</th>
+        <th>JavaScript</th>
+      </tr>
+      <tr class="info">
+        <td>面向对象</td>
+        <td>oracle</td>
+        <td>json</td>
+      </tr>
+      <tr>
+        <td>数组</td>
+        <td>mysql</td>
+        <td>ajax</td>
+      </tr>
+    </table>
+  </body>
+</html>

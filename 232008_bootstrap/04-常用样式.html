@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用样式</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  </head>
+  <body style="font-family: microsoft yahei">
+    <!-- 常用样式
+         1.标题 
+          bootstrap对h1~h6的标题效果进行覆盖
+          提供了对应的样式类名，为非标题元素设置样式 .h1~h6
+          副标题 small标签或.small类名
+          2.段落
+          <small>:小号字
+          <b><strong>:加粗
+          <i><em>:斜体
+    -->
+
+    <!-- 标题 -->
+    <h1>
+      标题1
+      <small>副标题</small>
+    </h1>
+    <h2>
+      标题1
+      <span class="small">副标题2</span>
+    </h2>
+    <h3>标题1</h3>
+    <div class="h1">你好</div>
+    <hr />
+    <!-- 段落 -->
+    <p>
+      并且不会阻止键盘用户能够获取焦点或激活这些链接。所以为了安全起见，建议使用自定义
+      来禁用这些链接
+    </p>
+    <p class="lead">
+      并且不会阻止<i>键盘用户</i>能够获取<small>焦点</small>或<strong>激活</strong>这些链接。
+      所以为了<em>安全</em>起见，建议使用自定义来<b>禁用</b>这些链接
+    </p>
+  </body>
+</html>
