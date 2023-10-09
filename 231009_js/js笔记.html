@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 内嵌式的js -->
+    <script>
+      /* 多行注释 shift+alt+a
+      多行注释 */
+      // 多行注释 ctrl+/
+      // 多行注释
+
+      // 这是一个输入框
+      prompt("请输入您的年龄");
+      // alert 弹出警示框 输出的 展示给用户的
+      alert("计算的结果是");
+      // console 控制台输出 给程序员测试用的
+      console.log("我是程序员能看到的");
+
+      // 1.声明一个age的变量
+      var age;
+      // 2.赋值 把值存入变量中
+      age = 18;
+      // 3.输出结果
+      console.log(age);
+      // 4.变量的初始化 声明变量的同时赋值
+      var myname = "潇潇";
+      console.log(myname);
+
+      var myname = "旗木卡卡西";
+      var adress = "火影村";
+      var age = 30;
+      var email = "kakaxi@itcast.cn";
+      var gz = 2000;
+      console.log(myname);
+      console.log(adress);
+      console.log(age);
+      console.log(email);
+      console.log(gz);
+    </script>
+    <script src="my.js"></script>
+  </head>
+  <body>
+    <!-- 行内式的js 直接写到元素的内部 -->
+    <input type="button" value="唐伯虎" onclick="alert('秋香姐')" />
+  </body>
+</html>
