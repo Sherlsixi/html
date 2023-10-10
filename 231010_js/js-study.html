@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数据类型
+      // int num = 10; java中num一定是数字型
+      // var num;//js这里的num是不确定属于哪种数据类型的
+      var num = 10; //num属于数字型
+      // js的变量数据类型是只有程序在运行过程中，根据等号右边的值来确定的
+      var str = "pink"; //str字符串型
+      // js是动态语言，变量的数据类型是可以变化的
+      var x = 10; //x是数字型
+      x = "pink"; //x是字符串型
+
+      var num = 10; //num数字型
+      var PI = 3.14; //PI数字型
+      // 数字型
+      // 数字型进制
+      //1.八进制 0~7 数字前面加0 表示八进制
+      var num1 = 0o10;
+      console.log(num1); //010 八进制 转换为十进制就是8
+      //2.十六进制 0~9 a~f #ffffff 数字的前面加0x表示十六进制
+      var num3 = 0x9;
+      console.log(num3);
+      //3. 数字型 的最大值
+      console.log(Number.MAX_VALUE);
+      // 4.数字型的最小值
+      console.log(Number.MIN_VALUE);
+      // 5.无穷大
+      console.log(Number.MAX_VALUE * 2); //infinity 无穷大
+      // 6.无穷小
+      console.log(-Number.MAX_VALUE * 2); //-infinity 无穷小
+      //7.非数字
+      console.log("pink" - 100); //NaN
+      //isNaN()用来判断一个变量是否为数字 并返回一个值 如果是数字返回false 如果不是数字返回true
+      console.log(isNaN(12)); //false
+
+      // 'pink' 'pink老师' '12'字符串类型 可用双引号和单引号 推荐单引号
+      // 引号嵌套时搭配使用 外双内单或外单内双
+      var str = "我是一个'高富帅'\n程序员"; //换行:\n 字符串转义字符 用\开头
+      console.log(str);
+    </script>
+  </body>
+</html>
