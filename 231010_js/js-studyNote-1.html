@@ -44,6 +44,24 @@
       // 引号嵌套时搭配使用 外双内单或外单内双
       var str = "我是一个'高富帅'\n程序员"; //换行:\n 字符串转义字符 用\开头
       console.log(str);
+
+      //1.检测字符串的长度 length
+      var str = "my name is andy";
+      console.log(str.length); //15
+      // 2.字符串拼接 +
+      console.log("沙漠" + "骆驼"); //字符串的沙漠骆驼
+      console.log("pink老师" + 18); //'pink老师18'
+      console.log(12 + 12); //24
+      console.log("12" + 12); //'1212'
+      console.log("hello" + " " + "world"); //hello world
+
+      console.log("xiaoxiao" + 18 + "岁");
+      var age = 19;
+      console.log("xiaoxiao" + age + "岁"); //xiaoxiao18岁
+
+      var age = prompt("请输入您的年龄");
+      var str = "您今年已经" + age + "岁了";
+      alert(str);
     </script>
   </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //数据类型转换
+      //把数字型转换为字符串型
+      // 1.变量.toString()
+      var num = 10;
+      var str = num.toString();
+      console.log(str);
+      console.log(typeof str);
+      // 2.利用String(变量)
+      console.log(String(num));
+      // 重点-3.利用变量+拼接字符串的方法实现转换效果； 隐式转换
+      console.log(num + "");
+
+      // 把字符串型转换为数值型
+      var age = prompt("请输入您的年龄");
+      // 1.parseInt(变量) 可以把字符型的转换为数字型 得到的是整数
+      console.log(parseInt(age));
+      console.log(parseInt("3.14")); //3 结果取整
+      console.log(parseInt("120px")); //120 会去掉px单位
+      console.log(parseInt("rem120px")); //NaN
+      // 2.parseFloat(变量)可以把字符型的转换为数字型 得到的是小数 浮点数
+      console.log(parseFloat("3.14"));
+      console.log(parseFloat("120px")); //120 会去掉px单位
+      // 3.利用Number(变量)
+      var str = "123";
+      console.log(Number(str));
+      console.log(Number("12"));
+      // 4.利用算数运算 - * /隐式转换
+      console.log("12" - 0); //12
+      console.log("123" - "120"); //3
+      console.log("123" * 1);
+      // 计算年龄
+      var year = prompt("请输入您的出生年份");
+      var age = 2023 - year; //year取过来的是字符串型 但减法中有隐式转换
+      alert("您今年已经" + age + "了");
+      // 简单加法器
+      var num1 = prompt("请输入第一个值:");
+      var num2 = prompt("请输入第二个值:");
+      var result = parseFloat(num1) + parseFloat(num2);
+      alert("你的结果是：" + result);
+
+      // 转换为布尔值
+      console.log(Boolean("")); //false
+      console.log(Boolean(0)); //false
+      console.log(Boolean(NaN)); //false
+      console.log(Boolean(null)); //false
+      console.log(Boolean(undefined)); //false
+      console.log(Boolean("123")); //true
+      console.log(Boolean("小白")); //true
+    </script>
+  </body>
+</html>
