@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //for 循环 循环的目的：重复执行某些代码
+      for (var i = 1; i <= 100; i++) {
+        console.log("烁烁大傻逼");
+      }
+      //1、for 重复执行某些代码，通常跟计数有关系
+      //2、for 语法结构
+      /* for (初始化变量; 条件表达式; 操作表达式){
+        循环体
+      } */
+      //3、初始化变量就是用var声明的一个普通变量，通常用于作为计数器使用
+      //4、条件表达式 就是用来决定每一次循环是否继续执行 就是终止的条件
+      //5、操作表达式 是每次循环最后执行的代码 经常用于我们计数器变量进行更新（递增或递减）
+
+      /* for (var a = 1; //循环执行步骤1 a <= 100; //步骤2  a++  //步骤4){
+        console.log('你好');//步骤3
+      } */
+      //让用户控制输出次数
+      var num = prompt("请你输入次数");
+      for (var a = 1; a <= num; a++) {
+        console.log("烁烁大宝贝");
+      }
+
+      /*  for (var b = 1; b <= 100; b++) {
+        console.log("这个人今年" + b + "岁了");
+      } */
+
+      for (var c = 1; c <= 100; c++) {
+        if (c == 1) {
+          console.log("这个人今年1岁了，他出生了");
+        } else if (c == 100) {
+          console.log("这个人今年100岁了，他死了");
+        } else {
+          console.log("这个人今年" + c + "岁了");
+        }
+      }
+
+      //for循环重复执行某些操作 比如做100次加法运算
+      //求1~100之间的整数累加和
+      //核心算法：1+2+3+.... sum = sum + i;  sum初始值为0；
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        // sum = sum + i;
+        sum += i;
+      }
+      console.log(sum);
+
+      //求1-100之间所有数的平均值 平均值的变量average
+      var sum = 0;
+      var average = 0;
+      for (var i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      average = sum / 100;
+      console.log(average);
+
+      //求1-100之间所有偶数和奇数的和 偶数变量even 奇数变量odd
+      var even = 0;
+      var odd = 0;
+      /* for (var i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          even += i;
+        } else {
+          odd += i;
+        }
+      } */
+      for (var i = 1; i <= 100; i++) {
+        i % 2 ? (odd += i) : (even += i);
+      }
+      console.log("1-100之间所有偶数和为" + even);
+      console.log("1-100之间所有奇数和为" + odd);
+
+      //求1-100之间所有能被3整除的数字的和
+      var result = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 3 == 0) {
+          result += i;
+        }
+      }
+      console.log("1-100之间所有能被3整除的数字的和为" + result);
+    </script>
+  </body>
+</html>

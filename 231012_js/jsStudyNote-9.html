@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩和平均成绩
+      /* var a = prompt("请输入班级人数");
+      var sum = 0; //总成绩
+      var average = 0; //平均成绩
+      for (var i = 1; i <= a; i++) {
+        var score = prompt("请输入第" + i + "个人的成绩");
+        sum += parseFloat(score); //prompt取过来的是字符串型的，所以要转换成数字型
+      }
+      average = sum / a;
+      alert("该班级总成绩为：" + sum);
+      alert("该班级平均成绩为：" + average); */
+
+      /* var str = "";
+      for (var i = 1; i <= 5; i++) {
+        str = str + "⋈";
+      }
+      console.log(str); */
+
+      /* var num = prompt("请输入星星的个数");
+      var str = "";
+      for (var i = 1; i <= num; i++) {
+        str = str + "⋈";
+      }
+      console.log(str); */
+
+      //双重for循环
+      /*  for (var i = 1; i <= 3; i++) {
+        console.log("这是外层循环第" + i + "次");
+        for (var j = 1; j <= 3; j++) {
+          console.log("这是里层循环第" + j + "次");
+        }
+      } */
+
+      /*   var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= 5; j++) {
+          str = str + "⋈";
+        }
+        str = str + "\n";
+      }
+      console.log(str); */
+
+      /* var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= 5; j++) {
+          str = str + "⋈";
+        }
+        console.log(str);
+      } */
+
+      //打印n行n列的星星
+      /* var rows = prompt("请您输入行数：");
+      var cols = prompt("请您输入列数：");
+      var str = "";
+      for (var i = 1; i <= rows; i++) {
+        for (var j = 1; j <= cols; j++) {
+          str += "⋈";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      /* var str = "";
+      for (var i = 1; i <= 10; i++) {
+        for (var j = i; j <= 10; j++) {
+          str += "⋈";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      /* var str = "";
+      for (var i = 1; i <= 10; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += "⋈";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //菱形
+      /* var str = "";
+      var row = prompt("请您输入行数：");
+      for (var i = 1; i <= row; i++) {
+        var starCount = 2 * i - 1;
+        if (i > row / 2) {
+          starCount = (row - i + 1) * 2 - 1;
+        }
+        var spaceCount = (row - starCount) / 2;
+        for (var j = 1; j <= spaceCount + starCount; j++) {
+          str += j <= spaceCount ? " " : "*";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //九九乘法表
+      /* var str = "";
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += j + "x" + i + "=" + i * j + "\t";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      /* var str = "";
+      var rows = 5;
+      for (var i = 1; i <= rows; i++) {
+        var maxStarCount = rows * 2 - 1;
+        var starCount = i * 2 - 1;
+        var spaceCount = (maxStarCount - starCount) / 2;
+
+        for (var k = 1; k <= spaceCount + starCount; k++) {
+          if (k > spaceCount) {
+            str += "*";
+          } else {
+            str += " ";
+          }
+        }
+
+        str += "\n";
+      }
+      console.log(str); */
+
+      //5行的直角三角形
+      //奇数星星个数的5行直角三角形
+      //5行等腰三角形
+      //用户输入行数
+      var str = "";
+      var row = prompt("请输入行数：");
+      for (var i = 1; i <= row; i++) {
+        var maxStarCount = row * 2 - 1;
+        var starCount = i * 2 - 1;
+        var spaceCount = (maxStarCount - starCount) / 2;
+        for (var k = 1; k <= spaceCount; k++) {
+          str += " ";
+        }
+        for (var j = 1; j <= starCount; j++) {
+          str += "*";
+        }
+        str += "\n";
+      }
+      console.log(str);
+    </script>
+  </body>
+</html>
