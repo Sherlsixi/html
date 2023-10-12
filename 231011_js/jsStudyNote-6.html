@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 分支结构语句
+      // 1、if语句语法结构 if(条件表达式){ 执行语句}
+      // 结果为真则执行语句，结果为假则执行后面的代码
+      /*if (3 < 5) {
+        alert("沙漠骆驼");
+      }*/
+      //2、if else双分支语句结构
+      /*var age = prompt("请输入您的年龄");
+      if (age >= 18) {
+        alert("我想带你去网吧偷球");
+      } else {
+        alert("回家找妈妈吧");
+      }
+      var year = prompt("请输入年份");
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        alert("你输入的年份是闰年");
+      } else {
+        alert("你输入的年份是平年");
+      }
+      var a = prompt("请输入姓名");
+      if (a == "刘德华") {
+        alert("恭喜您中奖了");
+      } else {
+        alert("很遗憾，您没有中奖");
+      }*/
+
+      // 3、if  else if 多分支语句结构
+      /*if(条件表达式1){
+          语句1；
+      }else if (条件表达式2){
+          语句2；
+      }else if(条件表达式3){
+          语句3；
+      }else{
+        最后的语句；
+      }*/
+
+      var grade = prompt("请输入您的分数");
+      if (grade >= 90) {
+        alert("A");
+      } else if (grade >= 80) {
+        alert("B");
+      } else if (grade >= 70) {
+        alert("C");
+      } else if (grade >= 60) {
+        alert("D");
+      } else {
+        alert("E");
+      }
+
+      //4、三元表达式 有三元运算符组成的式子
+      // ++num   3 + 5  ? :
+      // 语法结构：条件表达式 ？ 表达式1 ： 表达式2
+      // 执行思路 如果条件表达式结果为真 则 返回表达式1的值 如果条件表达式结果为假 则 返回表达式2的值
+      var num = 10;
+      var result = num > 5 ? "是的" : "不是的";
+      console.log(result);
+      /*if (num > 5) {
+        result = "是的";
+      } else {
+        result = "不是的";
+      }*/
+      var time = prompt("请您输入一个0~59之间的数字");
+      var result = time < 10 ? "0" + time : time;
+      alert(result);
+
+      //5、switch多分支语句 实现多选1
+      //执行思路：表达式的值如果和case后面的选项值相匹配 如果匹配上，就执行该case里面的语句
+      /*switch (表达式) {
+        case value1:
+          执行语句1;
+          break;
+        case value2:
+          执行语句2;
+          break;
+        default:
+          执行最后的语句;
+      }*/
+      switch (2) {
+        case 1:
+          console.log("这是1");
+          break;
+        case 2:
+          console.log("这是2");
+          break;
+        case 3:
+          console.log("这是3");
+          break;
+        default:
+          console.log("没有匹配结果");
+      }
+      //注意事项：开发里面表达式经常写成变量
+      // num 的值和 case 里的值匹配的时候是全等===
+      // break 如果不写，则不会退出switch，会继续执行下一个case
+      var num = 3;
+      switch (num) {
+        case 1:
+          console.log(1);
+          break;
+
+        case 3:
+          console.log(3);
+          break;
+      }
+
+      var fruit = prompt("请输入水果名称");
+      switch (fruit) {
+        case "苹果":
+          alert("苹果的价格是3.5元/斤");
+          break;
+        case "榴莲":
+          alert("榴莲的价格是35元/斤");
+          break;
+        default:
+          alert("没有此水果");
+      }
+
+      //switch语句和if else if语句一般可以相互替换
+      //case为固定值用switch 判断范围用if else if
+      //当分支较少时if else语句效率更高，但分支较多时switch执行效率更高
+    </script>
+  </body>
+</html>
