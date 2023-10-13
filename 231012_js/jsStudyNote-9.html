@@ -132,15 +132,40 @@
       }
       console.log(str); */
 
-      //5行的直角三角形
+      //直角三角形
       //奇数星星个数的5行直角三角形
-      //5行等腰三角形
-      //用户输入行数
-      var str = "";
+      //等腰三角形
+
+      /* var str = "";
       var row = prompt("请输入行数：");
       for (var i = 1; i <= row; i++) {
         var maxStarCount = row * 2 - 1;
         var starCount = i * 2 - 1;
+        var spaceCount = (maxStarCount - starCount) / 2;
+        for (var k = 1; k <= spaceCount; k++) {
+          str += " ";
+        }
+        for (var j = 1; j <= starCount; j++) {
+          str += "*";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //直角倒三角
+      //奇数直角倒三角
+      //奇数等腰倒三角形
+      //优化合并
+      var str = "";
+      var row = prompt("请输入行数");
+      for (var i = 1; i <= row; i++) {
+        var starCount;
+        if (i > row / 2) {
+          starCount = (row - i) * 2 + 1;
+        } else {
+          starCount = i * 2 - 1;
+        }
+        var maxStarCount = row - 1;
         var spaceCount = (maxStarCount - starCount) / 2;
         for (var k = 1; k <= spaceCount; k++) {
           str += " ";
