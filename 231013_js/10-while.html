@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //while循环 当条件表达式结果为true 则执行循环体；否则退出循环体
+      var num = 1;
+      while (num <= 100) {
+        console.log("how are you");
+        num++;
+      }
+      //打印人的一生 1岁-100岁
+      var i = 1;
+      while (i <= 100) {
+        console.log("这个人今年" + i + "岁了");
+        i++;
+      }
+
+      var j = 1;
+      var sum = 0;
+      while (j <= 100) {
+        sum += j;
+        j++;
+      }
+      console.log(sum);
+
+      //while循环和for循环的区别
+      //while循环可以做一些复杂的条件判断
+      /* var a = prompt("你爱我吗");
+      while (a != "我爱你") {
+        a = prompt("你爱我吗");
+      }
+      alert("我也爱你"); */
+
+      //do while循环 先执行一次循环体，再判断条件 ，如果为真则继续执行，否则退出循环
+      var b = 1;
+      do {
+        console.log("how are you ");
+        b++;
+      } while (b <= 20);
+
+      var c = 1;
+      do {
+        console.log("这个人今年" + c + "岁了");
+        c++;
+      } while (c <= 100);
+
+      var sum = 0;
+      var d = 1;
+      do {
+        sum += d;
+        d++;
+      } while (d <= 100);
+      console.log(sum);
+
+      /* do {
+        var e = prompt("你爱我吗?");
+      } while (e != "我爱你");
+      alert("我也爱你"); */
+
+      //for 、while、 do while三个循环之间的差别
+      //如果是用来计次数，跟数字相关的，三者皆可使用，但一般推荐用for循环
+      //while 和do while 可以做更复杂的判断条件，比for循环更灵活
+      //while和do while的执行顺序不同，while先判断后执行，do while 先执行一次再判断
+      //实际工作中，更常用for循环语句
+
+      //continue关键字
+      for (var i = 1; i <= 5; i++) {
+        if (i == 3) {
+          continue;
+        }
+        console.log("我正在吃第" + i + "个包子");
+      }
+
+      //求1-100之间，除了能被7整除之外的整数和
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 7 == 0) {
+          continue;
+        }
+        sum += i;
+      }
+      console.log(sum);
+
+      //break关键字
+      for (var i = 1; i <= 5; i++) {
+        if (i == 3) {
+          break;
+        }
+        console.log("我正在吃第" + i + "个包子");
+      }
+    </script>
+  </body>
+</html>

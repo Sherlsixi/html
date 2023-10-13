@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var sum = 0;
+      var count = 0;
+      /* for (var i = 1; i <= 100; i++) {
+        sum += i;
+        count++;
+      }
+      var average = sum / count;
+      console.log(
+        "1-100之间所有数的总和为：" +
+          sum +
+          "\n" +
+          "1-100之间所有数的平均值为：" +
+          average
+      ); */
+
+      //求1-100之间所有偶数的和及平均值
+      /* var sum = 0;
+      var count = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          sum += i;
+          count++;
+        }
+      }
+      var average = sum / count;
+      console.log("1-100之间所有偶数的和为：" + sum);
+      console.log("1-100之间所有偶数的平均值为：" + average); */
+
+      //求1-100之间所有奇数的和及平均值
+      /* var sum = 0;
+      var count = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          continue;
+        }
+        sum += i;
+        count++;
+      }
+      var average = sum / count;
+      console.log("1-100之间所有奇数的和为：" + sum);
+      console.log("1-100之间所有奇数的平均值为：" + average); */
+
+      //求100以内7的倍数的总和
+      /* var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 7 == 0) {
+          sum += i;
+        }
+      }
+      console.log("1-100之间7的倍数的总和为：" + sum); */
+
+      //使用for循环打印矩形
+      /* var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= 5; j++) {
+          str += "*";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //使用for循环打印三角形
+      /* var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += "*";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //使用for循环打印99乘法表
+      /* var str = "";
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += j + "x" + i + "=" + i * j + "\t";
+        }
+        str += "\n";
+      }
+      console.log(str); */
+
+      //接收用户输入的用户名和密码，若用户名为“admin”，
+      // 密码为“123456”，则提示用户登陆成功，否则让用户一直输入。
+      /* var uname;
+      var pswd;
+      while (uname != "admin") {
+        uname = prompt("请输入用户名");
+      }
+      while (pswd != "123456") {
+        pswd = prompt("请输入密码");
+      }
+      alert("登陆成功！"); */
+
+      //求整数1-100的累加值，但要求跳过所有个位为3的数
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 10 == 3) {
+          continue;
+        }
+        sum += i;
+      }
+      console.log(sum);
+    </script>
+  </body>
+</html>
