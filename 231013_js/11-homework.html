@@ -101,14 +101,51 @@
       alert("登陆成功！"); */
 
       //求整数1-100的累加值，但要求跳过所有个位为3的数
-      var sum = 0;
+      /* var sum = 0;
       for (var i = 1; i <= 100; i++) {
         if (i % 10 == 3) {
           continue;
         }
         sum += i;
       }
-      console.log(sum);
+      console.log(sum); */
+
+      //简易atm机
+      //完成每一个选项的功能
+      //完成前三个选项后回到最开始的提示框
+      //i的值发生改变
+
+      var i = 100;
+
+      do {
+        var message = prompt(
+          "请输入您要的操作：\n 1.存钱\n 2.取钱 \n 3.显示余额\n 4.退出"
+        );
+        switch (message) {
+          case "1":
+            var money = prompt("请输入存钱数");
+            i = i + parseFloat(money);
+            alert("当前余额为：" + i);
+            break;
+
+          case "2":
+            var money = prompt("请输入取钱数");
+            i -= parseFloat(money);
+            alert("当前余额为：" + i);
+            break;
+
+          case "3":
+            alert("当前余额为：" + i);
+            break;
+
+          case "4":
+            alert("您正在退出");
+            break;
+
+          default:
+            alert("您输入了错误的数字");
+        }
+      } while (message != 4);
     </script>
   </body>
 </html>

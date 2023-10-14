@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.数组（array):就是一组数据的集合 存储在单个变量下的优雅方式
+      //2.利用new创建数组
+      var arr = new Array(); //创建了一个空的数组
+      //3.利用数组字面量创建数组 []  里面可以存放任意类型的数据 更常用
+      // var 数组名 = [];
+      var arr = []; //创建了一个空的数组
+      var arr1 = [1, 2, "烁烁", true];
+      //4.数组里面的数据一定用逗号分隔
+      //5.数组里面的数据，我们称为数组元素
+      //6.获取数组中的元素 索引（下标）从0开始排序
+
+      console.log(arr1);
+      console.log(arr1[2]);
+
+      var arr2 = [
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+        "星期天",
+      ];
+      console.log(arr2[6]);
+
+      //遍历数组 把数组中的每个元素从头到尾访问一次
+      var arr = ["red", "green", "blue"];
+      for (var i = 0; i < 3; i++) {
+        console.log(arr[i]);
+      }
+      //因为我们的数组索引号从0开始，所以i必须从0开始 i < 3
+
+      var arr = ["关羽", "张飞", "马超", "赵云", "黄忠", "刘备", "姜维"];
+      for (var i = 0; i < 7; i++) {
+        console.log(arr[i]);
+      }
+
+      //数组长度 数组名.length 动态监测数组元素的个数
+      var arr = [
+        "pink",
+        "关羽",
+        "张飞",
+        "马超",
+        "赵云",
+        "黄忠",
+        "刘备",
+        "姜维",
+      ];
+      for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+
+      var arr = [2, 6, 1, 7, 4];
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      var average = sum / arr.length;
+      console.log(sum, average);
+
+      //找出[2,6,1,77,52,25,7]数组中最大值
+      var arr = [2, 6, 1, 77, 52, 25, 7];
+      var max = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      console.log("该数组里面的最大值是：" + max);
+
+      var arr = ["red", "green", "blue", "pink"];
+      var str = "";
+      var sep = "*";
+      for (var i = 0; i < arr.length; i++) {
+        str += arr[i] + sep;
+      }
+      console.log(str);
+
+      //数组中新增元素
+      //1.修改length长度
+      var arr = ["red", "green", "blue"];
+      console.log(arr.length);
+      arr.length = 5;
+      console.log(arr);
+      console.log(arr[3]);
+      console.log(arr[4]);
+      //2.修改索引号
+      var arr1 = ["red", "green", "blue"];
+      arr1[3] = "pink";
+      console.log(arr1);
+      arr1[0] = "yellow"; //替换原来的数组元素
+      console.log(arr1);
+
+      //新建一个数组，里面存放10个整数1-10
+      //利用for循环来追加数组
+      var arr = [];
+      for (var i = 0; i < 10; i++) {
+        arr[i] = i + 1;
+      }
+      console.log(arr);
+
+      //将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中大于等于10的元素选出来，放入新数组
+      //方法1
+      var arr1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var arr2 = [];
+      var j = 0;
+      for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] >= 10) {
+          //新数组索引号应该从0开始 依次递增
+          arr2[j] += arr1[i];
+          j++;
+        }
+      }
+      console.log(arr2);
+
+      //方法2
+      var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var newArr = [];
+      //刚开始newArr.length为0
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+          //新数组索引号应该从0开始 依次递增
+          newArr[newArr.length] = arr[i];
+        }
+      }
+      console.log(newArr);
+
+      //将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中的0去掉后，形成一个不包含0的新数组
+      var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] != 0) {
+          newArr[newArr.length] = arr[i];
+        }
+      }
+      console.log(newArr);
+
+      // var arr = [0, 0, 3, 3, 3, 2, 2, 5, 1, 5];
+      // newArr = [0, 3, 2, 5, 1];
+      //定义新数组
+      //写for循环
+      //newArr=[0,3]
+      var a = prompt("输入一个数");
+      var arr = [0, 3];
+      var isFound = false;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == a) {
+          isFound = true;
+          alert("数组中有这个数");
+          break;
+        }
+      }
+      if (isFound == false) {
+        alert("数组中没有这个数");
+      }
+
+      // 1.遍历原数组中的每一个元素
+      // 2.如果新数组中有当前遍历的元素，则跳过
+      // 3.如果新数组中没有当前遍历的元素，则给新数组新增这个元素
+      var arr = [0, 0, 3, 3, 3, 2, 2, 5, 1, 5];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        var a = arr[i];
+        var isFound = false;
+        for (var j = 0; j < newArr.length; j++) {
+          if (newArr[j] == a) {
+            isFound = true;
+            break;
+          }
+        }
+        if (isFound == false) {
+          newArr[newArr.length] = arr[i];
+        }
+      }
+      console.log(newArr);
+
+      //倒转数组['red','green','blue','pink','purple']
+      //核心把arr最后一个元素取出来给新数组作为第一个 arr最后一个元素的索引号=arr.length-1
+      var arr = ["red", "green", "blue", "pink", "purple"];
+      var newArr = [];
+      for (var i = arr.length - 1; i >= 0; i--) {
+        newArr[newArr.length] = arr[i];
+      }
+      console.log(newArr);
+    </script>
+  </body>
+</html>
