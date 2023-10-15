@@ -144,8 +144,7 @@
       }
       console.log(newArr);
 
-      // var arr = [0, 0, 3, 3, 3, 2, 2, 5, 1, 5];
-      // newArr = [0, 3, 2, 5, 1];
+      // 把var arr = [0, 0, 3, 3, 3, 2, 2, 5, 1, 5]中重复的数字去掉变成 newArr = [0, 3, 2, 5, 1];
       //定义新数组
       //写for循环
       //newArr=[0,3]
@@ -191,6 +190,18 @@
         newArr[newArr.length] = arr[i];
       }
       console.log(newArr);
+
+      //冒泡排序 把一系列的数据按照一定的顺序进行排列显示
+      var arr = [4, 5, 2, 1, 3];
+      for (var i = 0; i < arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - i - 1; j++)
+          if (arr[j] > arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+      }
+      console.log(arr);
     </script>
   </body>
 </html>

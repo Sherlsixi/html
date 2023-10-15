@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //写一个函数，用户输入任意两个数字的任意算数运算（简单的计算器小功能），并能弹出运算后的结果
+
+      /* function getResult(num1, str, num2) {
+        switch (str) {
+          case "+":
+            return num1 + num2;
+          case "-":
+            return num1 - num2;
+          case "*":
+            return num1 * num2;
+          case "/":
+            return num1 / num2;
+            
+        }
+      }
+      alert(getResult(3, "+", 2));
+      alert(getResult(8, "*", 3));
+      alert(getResult(8, "/", 0)); */
+
+      //写一个函数，用户输入任意两个数字的最大值，并能弹出运算后的结果
+      /* function getMax(num1, num2) {
+        
+        return num1 > num2 ? num1 : num2;
+      }
+      alert(getMax(5, 7));
+      alert(getMax(9, 3)); */
+
+      //写一个函数，用户输入任意三个不同数字的最大值，并能弹出运算后的结果
+      function getMax(arr) {
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+          if (arr[i] > max) {
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+      var re = getMax([1, 4, 2]);
+      re = getMax([9, 34, 4]);
+
+      console.log(re);
+
+      //写一个函数，用户输入一个数判断是否是素数，并能弹出返回值（又叫质数，只能被1和自身整除的数）
+      function getResult(num) {
+        for (var i = 2; i < num; i++) {
+          if (num % i == 0) {
+            return "这不是素数";
+          }
+        }
+        return "这是素数";
+      }
+      console.log(getResult(25));
+
+      //让[45,56,12,4,7,9]按从小到大的顺序排列
+      var arr = [45, 56, 12, 4, 7, 9];
+      for (var i = 0; i < arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - i - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      console.log(arr);
+
+      //写一个函数，参数是一个全部是数字的数组，判断这个数组里面有没有两个或两个以上的0，如果有返回true，如果没有，返回false
+      function hasZero(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === 0) {
+            sum++;
+            if (sum === 2) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+      console.log(hasZero([9, 3, 0, 6, 0, 7, 4]));
+      console.log(hasZero([9, 3, 0, 6, 0, 7, 4, 0]));
+      console.log(hasZero([9, 3, 0, 6, 0, 7, 4, 0, 0]));
+      console.log(hasZero([9, 3, 6, 7, 4, 0]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //arguments的使用  里面存储了传递的所有实参
+      //只有函数才有arguments对象，而且每个函数都内置好了这个arguments对象
+      //arguments展示形式是一个伪数组，因此可以进行遍历
+
+      //function fn() {
+      /* console.log(arguments);
+        console.log(arguments.length);
+        console.log(arguments[1]); */
+      /* for (var i = 0; i < arguments.length; i++) {
+          console.log(arguments[i]);
+        }
+      }
+      fn(1, 2, 3);
+      fn(1, 2, 3, 4, 5); */
+
+      //伪数组特点
+      //1.具有length属性
+      //2.按索引方式储存数据
+      //3.不具有数组的push，pop等方法
+
+      //利用函数求任意个数的最大值
+      function getMax() {
+        var max = arguments[0];
+        for (var i = 1; i < arguments.length; i++) {
+          if (arguments[i] > max) {
+            max = arguments[i];
+          }
+        }
+        return max;
+      }
+      console.log(getMax(1, 2, 3));
+      console.log(getMax(1, 2, 3, 4, 5));
+      console.log(getMax(11, 2, 34, 444, 5, 100));
+    </script>
+  </body>
+</html>

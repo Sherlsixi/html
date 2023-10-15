@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //函数注意事项
+      //1.return 会终止函数
+      function getSums(num1, num2) {
+        return num1 + num2; //alert后面的代码不会被执行
+        alert("我是不会被执行的哦");
+      }
+      console.log(getSums(1, 2));
+
+      // 2.return只能返回一个值
+      function fn(num1, num2) {
+        return num1, num2; //返回的结果是最后一个值
+      }
+      console.log(fn(1, 2));
+
+      //3.返回多个值
+      function getResult(num1, num2) {
+        return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+      }
+      var re = getResult(1, 2); //返回的是一个数组 想只返回一个值则用遍历数组
+      console.log(re);
+
+      //4.我们的函数如果有return，则返回的是return后面的值，如果函数没有return，则返回undefined
+      function fun1() {
+        // return 666;
+      }
+      console.log(fun1()); //函数返回结果是undefined
+
+      //5.break，continue,return的区别
+      //break:结束当前的循环体
+      //continue：跳出本次循环，继续执行下次循环
+      //return：不仅可以退出循环，还能够返回return语句中的值，同时还可以结束当前函数体内的代码
+    </script>
+  </body>
+</html>

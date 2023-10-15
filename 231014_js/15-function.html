@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 形参实参个数匹配
+      function getSum(num1, num2) {
+        console.log(num1 + num2);
+      }
+      // 1.如果实参的个数和形参的个数一致，则正常输出结果
+      getSum(1, 2);
+      // 2.如果实参的个数多于形参的个数，会取到形参的个数
+      getSum(1, 2, 3);
+      // 3.如果实参的个数小于形参的个数，多出来的形参定义为undefined，最终结果就是NaN
+      // num2是一个变量但是没有接受值，结果就是undefined
+      getSum(1); //NaN
+
+      // 1.函数是是做某件事或者实现某种功能
+      /* function cook(aru) {
+        console.log(aru);
+      }
+      cook("大肘子"); */
+      //console.log 输出结果写在函数里是不合理的
+
+      //2.函数的返回值格式
+      // return语句
+      /* function 函数名() {
+        return 需要返回的结果；
+      }
+      函数名() */
+      // （1）函数只是实现某种功能，最终的结果需要返回给函数的调用者：函数名（） （通过return实现）
+      // （2）只要函数遇到return，就把后面的结果返回给函数的调用者 函数名（）=return后面的结果
+      // （3）代码验证
+      function getResult() {
+        return 666;
+      }
+      getResult(); //getResult()=666
+      console.log(getResult());
+
+      /* function cook(aru) {
+        //aru='大肘子'
+        return aru;
+      }
+      console.log(cook("大肘子")); */
+
+      // 4.求任意两个数的和
+      function getSums(num1, num2) {
+        return num1 + num2;
+      }
+      console.log(getSums(1, 2));
+
+      // 利用函数 求两个数的最大值
+      function getMax(num1, num2) {
+        /* if (num1 > num2) {
+          return num1;
+        } else {
+          return num2;
+        } */
+        return num1 > num2 ? num1 : num2;
+      }
+      console.log(getMax(2, 7));
+      console.log(getMax(15, 4));
+
+      // 利用函数求任意一个数组中的最大值
+      // 利用函数求数组[5,2,99,101,67,77]中的最大数值
+      //arr =[5,2,99,101,67,77]
+      function getArrMax(arr) {
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+          if (arr[i] > max) {
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+      // console.log(getArrMax([5,2,99,101,67,77]));
+      // 在实际开发中，经常用一个变量来接受 函数的返回结果
+      // var re = getArrMax([5, 2, 99, 101, 67, 77]);
+      var re = getArrMax([3, 77, 34, 67, 7, 9]);
+      console.log(re);
+    </script>
+  </body>
+</html>
