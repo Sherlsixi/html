@@ -8,7 +8,45 @@
   <body>
     <script>
       //把数组[3,6,3,7,9,22,0,6,7,22,22]中重复的数字去掉变成[3,6,7,9,22,0]
+      //将第一个数3加入新数组newArr
+      //将newArr第一个数3跟arr[1]~arr[10]全部的数字进行比较，比较10次，跟3不同的数字加进新数组
+      /* var arr = [3, 6, 3, 7, 9, 22, 0, 6, 7, 22, 22];
+      var newArr = [];
+      for (var j = 0; j < arr.length; j++) {
+        if (newArr[0] == arr[j]) {
+          continue;
+        }
+        newArr[newArr.length] = arr[j];
+      }
+      console.log(newArr); */
+
+      var arr = [3, 6, 3, 7, 9, 22, 0, 6, 7, 22, 22];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        var isFound = false;
+        for (var j = 0; j < newArr.length; j++) {
+          if (arr[i] === newArr[j]) {
+            isFound = true;
+            break;
+          }
+        }
+        if (isFound === false) {
+          newArr[newArr.length] = arr[i];
+        }
+      }
+      console.log(newArr);
+
       //将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中大于等于10的元素选出来，放入新数组
+      /* var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var newArr = [];
+      var j=0;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+          newArr[newArr.length] = arr[i];
+          
+        }
+      }
+      console.log(newArr); */
     </script>
   </body>
 </html>

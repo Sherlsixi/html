@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //用函数翻转数组
+      function reverse(arr) {
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          newArr[newArr.length] = arr[i];
+        }
+        return newArr;
+      }
+      console.log(reverse(["red", "pink", "blue"]));
+      console.log(reverse([3, 4, 9, 2, 6, 1]));
+
+      //利用函数封装的方法，对数组进行排序————冒泡排序 从小到大
+      function bubbleSort(arr) {
+        for (var i = 1; i < arr.length; i++) {
+          for (var j = 0; j < arr.length - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              var temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+      console.log(bubbleSort([3, 6, 1, 9, 7, 4]));
+      console.log(bubbleSort([6, 5, 4, 3, 2, 1]));
+
+      //利用函数判断闰年
+      /* function isRunYear(year) {
+        if (year % 400 === 0) {
+          return true;
+        }
+        if (year % 4 === 0) {
+          if (year % 100 !== 0) {
+            return true;
+          }
+        }
+        return false;
+      }
+      console.log(isRunYear(2020) ? "这是闰年" : "这是平年");
+      console.log(isRunYear(800) ? "这是闰年" : "这是平年"); */
+
+      function isRunYear(year) {
+        /* var flag = false;
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+          flag = true;
+        }
+        return flag; */
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+      }
+      console.log(isRunYear(2018));
+
+      //函数可以相互调用
+      function fn1() {
+        console.log(11);
+        fn2();
+      }
+      fn1();
+
+      function fn2() {
+        console.log(22);
+      }
+    </script>
+  </body>
+</html>
