@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //用户输入年份，输出当前年份2月份的天数
+      function getDays() {
+        var year = prompt("请您输入年份：");
+        if (isRunYear(year)) {
+          alert("当前年份是闰年，2月份有29天");
+        } else {
+          alert("当前年份是平年，2月份有28天");
+        }
+      }
+      getDays();
+
+      //判断是否为闰年的函数
+      function isRunYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+      }
+
+      //函数的两种声明方式
+      //1.利用函数关键字自定义函数 之前的笔记中用的方式
+      function fn() {}
+      fn();
+
+      //2.函数表达式(匿名函数) 没有函数名，只声明了变量
+      // var 变量名=function(){};
+      var fun = function (aru) {
+        console.log("我是函数表达式");
+        console.log(aru);
+      };
+      fun("烁烁");
+      //fun是变量名，不是函数名
+      //函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值，而函数表达式里存的是函数
+      //函数表达式也可以进行传递参数
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.JavaScript作用域：就是代码名字（变量）在某个范围内起作用和效果
+      //目的是为了提高程序的可靠性，更重要的是减少命名冲突
+      //2.js的作用域（es6）之前：全局作用域 局部作用域
+      //3.全局作用域：整个script标签，或者是一个单独的js文件
+      /* var num = 10;
+      var num = 30;
+      console.log(num); //30 */
+      //4.局部作用域（函数作用域） 在函数内部的就是局部作用域，这个代码的名字只在函数内部起效果和作用
+      /* function fn() { */
+      //局部作用域
+      /* var num = 20;
+        console.log(num); //20
+      }
+      fn(); */
+
+      //1.全局变量：在全局作用域下的变量，在全局下都可以使用
+      //注意 如果在函数内部 没有声明直接赋值的变量也属于全局变量
+      var num = 10; //num就是一个全局变量
+      console.log(num); //打印10
+
+      function fn() {
+        console.log(num); //打印10
+      }
+      fn();
+
+      //2.局部变量 在局部作用域下的变量 或者在函数内的变量
+      //注意 函数的形参也可以看作是局部变量 function fun(aru)的aru
+      function fun() {
+        var num1 = 10; //num1就是一个局部变量，只能在函数内部使用
+        num2 = 20; //这里的num2是一个全局变量
+      }
+      fun();
+      //console.log(num1);输出undefined  无法函数外部使用
+      console.log(num2);
+
+      //3.从执行效率来看全局变量和全局变量
+      //（1）全局变量只有浏览器关闭的时候才会销毁，比较占内存资源
+      //（2）局部变量 当我们的程序执行完毕就会销毁，比较节约内存资源 推荐使用
+
+      //js是在es6的时候开始新增的块级作用域
+      //块级作用域{} if{} for{} 写在括号里的
+      //java里面的块级作用域
+      //if(xx){
+      //   int num=10;
+      // }
+      // 外面的是不能调用num的
+
+      if (3 < 5) {
+        var num = 40;
+      }
+      console.log(num); //js可以在外部调用num
+
+      //只要是代码，就至少有一个作用域
+      //如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域
+
+      //作用域链 内部函数可以访问外部函数变量，用链式查找决定哪些数据能被内部函数访问 就近原则
+      var num = 10;
+      function fn() {
+        //外部函数
+        var num = 20;
+        function fun() {
+          //内部函数
+          console.log(num);
+        }
+        fun();
+      }
+      fn();
+    </script>
+  </body>
+</html>
