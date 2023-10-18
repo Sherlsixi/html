@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function getResult(num1, str, num2) {
+      //   var num1 = prompt("请输入第一个数");
+      //   var str = prompt("请输入运算符");
+      //   var num2 = prompt("请输入第二个数");
+
+      //   switch (str) {
+      //     case "+":
+      //       return parseFloat(num1) + parseFloat(num2);
+      //     case "-":
+      //       return parseFloat(num1) - parseFloat(num2);
+      //     case "*":
+      //       return parseFloat(num1) * parseFloat(num2);
+      //     case "/":
+      //       return parseFloat(num1) / parseFloat(num2);
+      //   }
+      // }
+      // alert(getResult());
+
+      //写一个函数，参数是一个全部是数字的数组，判断这个数组里面有没有两个或两个以上的0，如果有返回true，如果没有，返回false
+      function isFound(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === 0) {
+            sum++;
+            if (sum === 2) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+      console.log(isFound([3, 2, 6, 0, 2, 5, 1, 6]));
+      console.log(isFound([0, 2, 6, 0, 2, 5, 0, 6]));
+    </script>
+  </body>
+</html>
