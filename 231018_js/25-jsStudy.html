@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1问
+      // console.log(num);//报错
+
+      //2问
+      // console.log(num); //输出undefined 坑1
+      // var num = 10;
+      //预解析运行顺序
+      //var num;
+      //console.log(num); //undefined
+      //num = 10;
+
+      //3问
+      // fn();
+      // function fn() {
+      //   console.log(11);
+      // }
+      //预解析运行顺序
+      //function fn() {
+      //   console.log(11);
+      // }
+      // fn();
+
+      //4问
+      // fun(); //报错 坑2
+      // var fun = function () {
+      //   console.log(22);
+      // };
+      // fun(); //正常运行
+
+      //函数表达式中   fun（）调用必须写在函数表达式的下面
+      //4问预解析运行顺序
+      //var fun;
+      //fun();
+      //fun = function () {
+      //   console.log(22);
+      // };
+
+      //1.我们js引擎运行js分为两步：1.预解析 和 2.代码执行
+      //（1）.预解析 js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+      //（2）.代码执行 按照代码书写的顺序从上往下执行
+      //2.预解析分为 变量预解析（变量提升）  和  函数预解析（函数提升）
+      //（1）变量提升 就是把所有的变量声明提升到当前作用域的最前面 不提升赋值操作
+      //（2）函数提升 就是把所有的函数声明提升到当前作用域的最前面  不调用函数
+
+      //预解析案例
+      //案例1
+      // var num = 10;
+      // fun();
+      // function fun() {
+      //   console.log(num);
+      //   var num = 20;
+      // }
+      //预解析运行流程
+      //var num;
+      //function fun(){
+      //   var num
+      //   console.log(num); //输出undefined
+      //   num =20;
+      // }
+      //num=10;
+      //fun();
+
+      //案例2
+      // var num = 10;
+      // function fn() {
+      //   console.log(num);
+      //   var num = 20;
+      //   console.log(num);
+      // }
+      // fn();
+      //预解析运行流程
+      //var num;
+      //function fn(){
+      //   var num
+      //   console.log(num); //输出undefined
+      //   num =20;
+      //   console.log(num); //输出20
+      // }
+      //num=10;
+      //fn();
+
+      //案例3
+      // var a = 18;
+      // f1();
+      // function f1() {
+      //   var b = 9;
+      //   console.log(a);
+      //   console.log(b);
+      //   var a = "123";
+      // }
+      //预解析运行流程
+      // var a;
+      // function f1() {
+      //   var b;
+      //   var a;
+      //   b = 9;
+      //   console.log(a); //输出undefined
+      //   console.log(b); //输出9
+      //   a = "123";
+      // }
+      // a = 18;
+      // f1();
+
+      //案例4
+      f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+      function f1() {
+        var a = (b = c = 9);
+        //相当于 var a=9; b=9; c=9; b和c当全局变量看
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      //预解析运行过程
+      // function f1() {
+      //   var a;
+      //   a = b = c = 9;
+      //   console.log(a); //9
+      //   console.log(b); //9
+      //   console.log(c); //9
+      // }
+      // f1();
+      // console.log(c); //9
+      // console.log(b); //9
+      // console.log(a); //报错
+    </script>
+  </body>
+</html>
