@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //创建一个电脑对象，该对象要有颜色、重量、品牌、型号，可以看电影、听音乐、打游戏和敲代码
+      var comp = {
+        color: "red",
+        weight: "1kg",
+        brand: "apple",
+        type: "2022pro",
+        work: function () {
+          console.log("看电影" + "&听音乐" + "&打游戏" + "&敲代码");
+        },
+      };
+      console.log(comp.color);
+      comp.work();
+
+      //创建一个按钮对象，该对象需要包含宽、高、背景颜色和点击行为
+      var btn = {
+        width: 100,
+        height: 50,
+        background: "blue",
+        click: function () {
+          console.log("点击");
+        },
+      };
+      console.log(btn.background);
+      btn.click();
+
+      //创建一个车的对象，该对象要有重量、颜色、牌子，可以载人、拉货和耕田
+      var car = {
+        weight: "1000kg",
+        color: "black",
+        brand: "bentz",
+        work: function () {
+          console.log("载人" + "&拉货" + "&耕田");
+        },
+      };
+      console.log(car.brand);
+      car.work();
+
+      //写一个函数，实现翻转任意数组
+      function reverse(arr) {
+        for (var i = 0, j = arr.length - 1; i < j; i++, j--) {
+          var temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
+        return arr;
+      }
+      console.log(reverse([3, 4, 1, 8, 9, 2, 6]));
+      console.log(reverse([1, 2, 3, 4, 5, 6, 7, 8]));
+
+      //写一个函数，实现对数字数组的排序
+      function order(arr) {
+        for (var i = 1; i < arr.length; i++) {
+          for (var j = 0; j < arr.length - i; j++) {
+            if (arr[j] < arr[j + 1]) {
+              var temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+      console.log(order([4, 2, 1, 5, 6, 7, 8]));
+      console.log(order([3, 88, 23, 45, 36, 8, 7]));
+    </script>
+  </body>
+</html>

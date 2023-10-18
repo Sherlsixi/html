@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //构造函数和对象
+      //1.构造函数 明星 泛指的某一大类 它类似于Java语言里面的 类
+
+      function Star(uname, age, sex) {
+        this.name = uname;
+        this.uage = age;
+        this.usex = sex;
+        this.sing = function (sang) {
+          console.log(sang);
+        };
+      }
+
+      //2.对象（实例） 是一个具体的事物 刘德华 == {name: '刘德华', uage: 18, usex: '男', sing: ƒ}
+      var ldh = new Star("刘德华", 18, "男");
+      console.log(ldh);
+      var zxy = new Star("张学友", 20, "男");
+      //3.我们利用函数创建对象的过程也称为对象的实例化
+
+      //new关键字执行过程
+      //1.new构造函数可以先在内存中创建一个空的对象
+      //2.this就会指向刚才创建的空对象
+      //3.执行构造函数里的代码 给这个空对象添加属性和方法
+      //4.返回这个对象
+
+      //遍历对象
+      var obj = {
+        name: "pink老师",
+        age: 18,
+        sex: "男",
+        fn: function () {}, //很少用来遍历方法
+      };
+      console.log(obj.name);
+      console.log(obj.age);
+      console.log(obj.sex);
+
+      //for in 遍历对象
+      // for (变量 in 对象){
+
+      // }
+      for (var k in obj) {
+        console.log(k); //k 变量 输出 得到的是属性名
+        console.log(obj[k]); //obj[k]得到的是属性值
+      }
+      //我们使用 for in 里面的变量 我们喜欢写k 或者 key
+    </script>
+  </body>
+</html>
