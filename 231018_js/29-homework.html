@@ -51,10 +51,13 @@
           arr[i] = arr[j];
           arr[j] = temp;
         }
-        return arr;
+        // return arr;
       }
-      console.log(reverse([3, 4, 1, 8, 9, 2, 6]));
-      console.log(reverse([1, 2, 3, 4, 5, 6, 7, 8]));
+      var arr1 = [3, 4, 1, 8, 9, 2, 6];
+      reverse(arr1);
+      console.log("arr1:", arr1);
+      // console.log(reverse([3, 4, 1, 8, 9, 2, 6]));
+      // console.log(reverse([1, 2, 3, 4, 5, 6, 7, 8]));
 
       //写一个函数，实现对数字数组的排序
       function order(arr) {
