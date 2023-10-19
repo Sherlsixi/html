@@ -74,6 +74,42 @@
       }
       console.log(order([4, 2, 1, 5, 6, 7, 8]));
       console.log(order([3, 88, 23, 45, 36, 8, 7]));
+
+      //做一个简易计算器
+
+      do {
+        var opr = prompt(
+          "欢迎使用简易计算器：\n1.加法运算；\n2.减法运算；\n3.乘法运算；\n4.除法运算；\n5.退出；\n请输入您的选项："
+        );
+        if (opr === "5") {
+          alert("您正在退出");
+          break;
+        }
+
+        var num1 = parseFloat(prompt("请输入第一个数字"));
+        var num2 = parseFloat(prompt("请输入第二个数字"));
+
+        switch (opr) {
+          case "1":
+            var sum = num1 + num2;
+            alert(sum);
+            break;
+          case "2":
+            var sum = num1 - num2;
+            alert(sum);
+            break;
+          case "3":
+            var sum = num1 * num2;
+            alert(sum);
+            break;
+          case "4":
+            var sum = num1 / num2;
+            alert(sum);
+            break;
+          default:
+            alert("您输入了错误的数字");
+        }
+      } while (true);
     </script>
   </body>
 </html>
