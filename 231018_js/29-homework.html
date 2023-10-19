@@ -77,38 +77,101 @@
 
       //做一个简易计算器
 
+      // do {
+      //   var opr = prompt(
+      //     "欢迎使用简易计算器：\n1.加法运算；\n2.减法运算；\n3.乘法运算；\n4.除法运算；\n5.退出；\n请输入您的选项："
+      //   );
+      //   if (opr === "5") {
+      //     alert("您正在退出");
+      //     break;
+      //   }
+
+      //   var num1 = parseFloat(prompt("请输入第一个数字"));
+      //   var num2 = parseFloat(prompt("请输入第二个数字"));
+
+      //   switch (opr) {
+      //     case "1":
+      //       var sum = num1 + num2;
+      //       alert(sum);
+      //       break;
+      //     case "2":
+      //       var sum = num1 - num2;
+      //       alert(sum);
+      //       break;
+      //     case "3":
+      //       var sum = num1 * num2;
+      //       alert(sum);
+      //       break;
+      //     case "4":
+      //       var sum = num1 / num2;
+      //       alert(sum);
+      //       break;
+      //     default:
+      //       alert("您输入了错误的数字");
+      //   }
+      // } while (true);
+
       do {
+        // 提示用户输入
         var opr = prompt(
           "欢迎使用简易计算器：\n1.加法运算；\n2.减法运算；\n3.乘法运算；\n4.除法运算；\n5.退出；\n请输入您的选项："
         );
+        // 输入5立即退出
         if (opr === "5") {
           alert("您正在退出");
           break;
         }
 
-        var num1 = parseFloat(prompt("请输入第一个数字"));
-        var num2 = parseFloat(prompt("请输入第二个数字"));
-
+        // 检查输入是否合法
+        var isInputValid = false;
+        // switch里不写break的时候，opr是1，2，3，4时都会执行4.
         switch (opr) {
           case "1":
-            var sum = num1 + num2;
-            alert(sum);
+          case "2":
+          case "3":
+          case "4":
+            isInputValid = true;
+            break;
+        }
+        // 输入不合法则开始下一轮循环
+        if (!isInputValid) {
+          alert("您输入了错误的数字");
+          continue;
+        }
+
+        var num1, num2, sum;
+        // 循环输入第一个数字，直到输对为止
+        while (isNaN(num1)) {
+          // 当输入的不是数字的时候，parseFloat的返回值是NaN
+          num1 = parseFloat(prompt("请输入第一个数字"));
+          if (isNaN(num1)) {
+            alert("请输入数字");
+          }
+        }
+        // 循环输入第二个数字，直到输对为止
+        while (isNaN(num2)) {
+          num2 = parseFloat(prompt("请输入第二个数字"));
+          if (isNaN(num2)) {
+            alert("请输入数字");
+          }
+        }
+        switch (opr) {
+          case "1":
+            sum = num1 + num2;
             break;
           case "2":
-            var sum = num1 - num2;
-            alert(sum);
+            sum = num1 - num2;
             break;
           case "3":
-            var sum = num1 * num2;
-            alert(sum);
+            sum = num1 * num2;
             break;
           case "4":
-            var sum = num1 / num2;
-            alert(sum);
+            sum = num1 / num2;
             break;
-          default:
-            alert("您输入了错误的数字");
         }
+        alert(sum);
+        num1 = undefined;
+        num2 = undefined;
       } while (true);
     </script>
   </body>
