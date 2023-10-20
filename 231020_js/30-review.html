@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //使用构造函数创建一个电脑对象，该对象要有颜色、重量、品牌、型号，可以看电影、听音乐、打游戏和敲代码
+      // function Comp(color, weight, brand, type) {
+      //   this.ucolor = color;
+      //   this.uweight = weight;
+      //   this.ubrand = brand;
+      //   this.type = type;
+      //   this.fun = function (work) {
+      //     console.log(work);
+      //   };
+      // }
+      // // console.log(new Comp("blue", "1kg", "apple", "2022pro").ubrand);
+      // var com1 = new Comp("blue", "1kg", "apple", "2022pro");
+      // console.log(com1.ubrand);
+      // console.log(com1.ucolor);
+      // com1.fun("看电影&听音乐&打游戏&敲代码");
+      // var com2 = new Comp("red", "1.5kg", "hp", "2021");
+      // console.log(com2.uweight);
+      // com2.fun("看剧&听音乐&画画");
+
+      //使用构造函数创建一个按钮对象，该对象需要包含宽、高、背景颜色和点击行为
+      // function Btn(width, height, background) {
+      //   this.w = width;
+      //   this.h = height;
+      //   this.back = background;
+      //   this.fun = function (click) {
+      //     console.log(click);
+      //   };
+      // }
+      // var btn = new Btn(100, 50, "red");
+      // console.log(btn.w);
+      // console.log(btn.h);
+      // console.log(btn.back);
+      // btn.fun("点击");
+
+      //利用构造函数创建一个车的对象，该对象要有重量、颜色、牌子，可以载人、拉货和耕田
+      function Car(weight, color, brand) {
+        this.uweight = weight;
+        this.ucolor = color;
+        this.ubrand = brand;
+        this.fun = function (work) {
+          console.log(work);
+        };
+      }
+      var a = new Car("1000kg", "black", "bentz");
+      console.log(a.ubrand);
+      console.log(a.ucolor);
+      a.fun("载人&拉货&耕田");
+    </script>
+  </body>
+</html>
