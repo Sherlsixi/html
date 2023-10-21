@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //字符串对象
+
+      //基本包装类型
+      // var str = "andy";
+      // console.log(str.length);
+      //对象和复杂数据类型才有属性和方法
+      //字符串这种简单数据类型为什么会有length属性呢
+      // 基本包装类型：就是把简单数据类型包装成为了复杂数据类型
+      //（1）把简单数据类型
+      //相当于 var str = new String("andy");
+
+      var str = "andy";
+      console.log(str.length);
+      str = "red"; //'andy'还在，只是str指向了'red'
+      //字符串的不可变性
+      //因为字符串的不可变性，所以不要大量拼接字符串
+      // var str = "";
+      // for (var i = 1; i <= 100; i++) {
+      //   str += i;
+      // }
+
+      var num = 5; //数字型是可变的
+      num = 8;
+
+      //字符串对象 根据字符返回位置 str.indexOf('要查找的字符'，[起始的位置])
+      // var str = "改革春风吹满地，春天来了";
+      // console.log(str.indexOf("春"));
+      // console.log(str.indexOf("春", 3)); //从索引号3开始往后查找
+
+      //查找字符串'abcoefoxyozzopp'中所有o出现的位置以及次数
+      console.log("---------");
+      var str = "abcoefoxyozzopp";
+      var index = str.indexOf("o");
+      var num = 0;
+      // console.log(index);
+      while (index !== -1) {
+        console.log(index);
+        num++;
+        index = str.indexOf("o", index + 1);
+      }
+      console.log("o出现的次数是:" + num);
+
+      //作业 ['red','blue','red','green','pink','red']求red出现的位置和次数
+      var arr = ["red", "blue", "red", "green", "pink", "red"];
+      var index = arr.indexOf("red");
+      var sum = 0;
+      // console.log(index);
+      while (index !== -1) {
+        console.log(index);
+        sum++;
+        index = arr.indexOf("red", index + 1);
+      }
+      console.log("red出现的次数是：" + sum);
+
+      //根据位置返回字符
+      //1.charAt(index)根据位置返回字符
+      var str = "andy";
+      // console.log(str.charAt(3));
+      //遍历所有字符
+      for (var i = 0; i < str.length; i++) {
+        console.log(str.charAt(i));
+      }
+
+      //2.charCodeAt(index) 返回相应索引号的字符ASCII值 目的：判断用户按下了哪个键
+      console.log(str.charCodeAt(0)); //97
+
+      //3.str[index] H5新增的
+      console.log(str[0]);
+
+      //有一个对象
+      var o = {
+        age: 18,
+      };
+      if (o["age"]) {
+        console.log("里面有该属性");
+      } else {
+        console.log("没有该属性");
+      }
+    </script>
+  </body>
+</html>
