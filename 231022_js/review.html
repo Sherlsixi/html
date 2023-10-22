@@ -14,6 +14,167 @@
       //4、替换指定的字符，如：g替换为22，ss替换为b等操作方法
       //5、截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
       //6、找出以上字符串中出现次数最多的字符和出现的次数
+      var str = "abaasdffggghhjjkkgfddsssss344343";
+      console.log(str.length);
+      console.log(str.charAt(0));
+      console.log(str.charAt(9));
+
+      var arr = ["g", "c", "b"];
+      for (let i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        if (str.indexOf(element) === -1) {
+          console.log("没有" + element + "这个字符串");
+        } else {
+          console.log(
+            "有" + element + "这个字符串，位置在" + str.indexOf(element)
+          );
+        }
+      }
+      console.log(str.replace("ss", "b"));
+      console.log(str.slice(1, 6));
+
+      var obj = {};
+      for (var i = 0; i < str.length; i++) {
+        var a = str.charAt(i);
+        if (obj[a]) {
+          obj[a]++;
+        } else {
+          obj[a] = 1;
+        }
+      }
+      // console.log(obj);
+      var max = 0;
+      var key = "";
+      for (var k in obj) {
+        // console.log(k);
+        if (obj[k] > max) {
+          max = obj[k];
+          key = k;
+        }
+      }
+      console.log(obj);
+      console.log("出现次数最多的是" + key + "，出现了" + max + "次");
+
+      console.log("-----------");
+
+      //1.随机生成一个1~10的整数 需要用到Math.random()方法
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      console.log(getRandom(1, 10));
+
+      console.log("----------");
+
+      //猜数字游戏
+      //要求用户猜1~50之间的一个数字 但是只有10次猜的机会
+      // function getRandom(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1) + min);
+      // }
+      // var num = getRandom(1, 50);
+      // for (var i = 0; i <= 10; i++) {
+      //   var a = parseFloat(prompt("请猜一猜，输入1-50之间的数字"));
+      //   if (a < num) {
+      //     alert("猜小了");
+      //   } else if (a > num) {
+      //     alert("猜大了");
+      //   } else {
+      //     alert("恭喜你猜对了");
+      //     break;
+      //   }
+      // }
+      console.log("----------");
+
+      //要求封装一个函数返回当前的时分秒 格式08：08：08
+      function getTime() {
+        var date = new Date();
+        var h = date.getHours();
+        h = h < 10 ? "0" + h : h;
+        var m = date.getMinutes();
+        m = m < 10 ? "0" + m : m;
+        var s = date.getSeconds();
+        s = s < 10 ? "0" + s : s;
+        return h + ":" + m + ":" + s;
+      }
+
+      console.log(getTime());
+
+      //写一个倒计时
+      function countDown(time) {
+        var nowTime = Date.now();
+        var inputTime = +new Date(time);
+        var times = (inputTime - nowTime) / 1000;
+        var d = parseInt(times / 60 / 60 / 24);
+        d = d < 10 ? "0" + d : d;
+        var h = parseInt((times / 60 / 60) % 24);
+        h = h < 10 ? "0" + h : h;
+        var m = parseInt((times / 60) % 60);
+        m = m < 10 ? "0" + m : m;
+        var s = parseInt(times % 60);
+        s = s < 10 ? "0" + s : s;
+        return "距离活动结束还剩" + d + "天" + h + "时" + m + "分" + s + "秒";
+      }
+      console.log(countDown("2023-10-23 18:00:00"));
+
+      console.log(
+        "--------------有一个包含工资的数组[1500,1200,2000,2100,1800],要求把数组中工资超过2000的删除，剩余的放到新数组里面------------"
+      );
+      var arr = [1500, 1200, 2000, 2100, 1800];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < 2000) {
+          newArr.push(arr[i]);
+        }
+      }
+      console.log(newArr);
+
+      console.log(
+        "------------数组去重  重点案例,封装一个去重的函数------------"
+      );
+      function unique(arr) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (newArr.indexOf(arr[i]) === -1) {
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr;
+      }
+      // var demo = unique([2, 2, 3, 5, 7, 8, 9, 5, 6, 7, 8]);
+      var demo = unique([4, 5, 6, 7, 1, 2, 2, 4, 3, 5, 6]);
+      console.log(demo);
+
+      console.log("------------1.翻转数组------------");
+
+      var arr = ["red", "pink", "blue"];
+      console.log(arr.reverse());
+
+      console.log("------------2.数组排序（冒泡排序）------------");
+      var arr1 = [34, 12, 7, 2, 4];
+      arr1.sort(function (a, b) {
+        return b - a;
+      });
+      console.log(arr1);
+
+      console.log("------------随机生成长度为50的从a~z的字符串------------");
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function getRandomStr(len) {
+        var str = "";
+        for (var i = 0; i < len; i++) {
+          var random = getRandom(97, 122);
+          var character = String.fromCharCode(random);
+          str += character;
+        }
+        return str;
+      }
+      console.log(getRandomStr(50));
+
+      //查找字符串'abcoefoxyozzopp'中所有o出现的位置以及次数
+
+      //判断'abcoefoxyozzopp'中出现次数最多的字符，并统计其次数
+
+      //作业 ['red','blue','red','green','pink','red']求red出现的位置和次数
     </script>
   </body>
 </html>

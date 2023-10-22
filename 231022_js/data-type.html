@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //简单数据类型 特殊情况 null 返回的是一个空的对象 object
+
+      var timer = null;
+      console.log(typeof timer);
+      //如果有个变量我们以后打算储存为对象，暂时没想好放啥，这个时候就给null
+
+      //复杂数据类型 通过new关键字创建的对象
+      // （系统对象、自定义对象）
+
+      //简单数据类型存放到栈空间里，存放的是值
+      //复杂数据类型存放到堆空间里，在栈里面存放地址（十六进制表示），这个地址指向堆里面的数据
+
+      //简单数据传参  在方法内部的任何修改，都不会影响外部变量
+      function fn(a) {
+        a++;
+        console.log(a); //11
+      }
+      var x = 10;
+      fn(x);
+      console.log(x); //10
+
+      //复杂数据类型传参 形参和实参保存的是同一个堆地址，所以操作的是同一个对象
+      function Person(name) {
+        this.name = name;
+      }
+      function f1(x) {
+        console.log(x.name); //2.这个输出什么？ 刘德华
+        x.name = "张学友";
+        console.log(x.name); //3.这个输出什么？ 张学友
+      }
+      var p = new Person("刘德华");
+      console.log(p.name); //1.这个输出什么？ 刘德华
+      f1(p);
+      console.log(p.name); //4.这个输出什么？ 张学友
+    </script>
+  </body>
+</html>
