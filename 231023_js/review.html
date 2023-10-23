@@ -14,13 +14,69 @@
       //4、替换指定的字符，如：g替换为22，ss替换为b等操作方法
       //5、截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
       //6、找出以上字符串中出现次数最多的字符和出现的次数
+      var str = "abaasdffggghhjjkkgfddsssss344343";
+      var obj = {};
+      for (var i = 0; i < str.length; i++) {
+        var chars = str.charAt(i);
+        if (obj[chars]) {
+          obj[chars]++;
+        } else {
+          obj[chars] = 1;
+        }
+      }
+      // console.log(obj);
+      var max = 0;
+      var alph;
+      for (var k in obj) {
+        if (max < obj[k]) {
+          max = obj[k];
+          alph = k;
+        }
+      }
+      console.log(alph, max);
 
       //二、随机生成一个1~10的整数 需要用到Math.random()方法
+      // function getRandom(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1) + min);
+      // }
+      // console.log(getRandom(1, 10));
 
       //三、猜数字游戏
       //要求用户猜1~50之间的一个数字 但是只有10次猜的机会
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      var random = getRandom(1, 50);
+      var i = 0;
+      do {
+        var num = prompt("请猜一猜，输入1-50之间的数字");
+        if (num > random) {
+          alert("猜大了");
+        } else if (num < random) {
+          alert("猜小了");
+        } else {
+          alert("恭喜你猜对了");
+          break;
+        }
+        i++;
+      } while (i < 10);
 
-      //四、要求封装一个函数返回当前的时分秒 格式08：08：08
+      console.log(
+        "------------四、要求封装一个函数返回当前的时分秒 格式08：08：08------------"
+      );
+      // console.log(new Date());
+      function getTime() {
+        var nowTime = new Date();
+        var h = nowTime.getHours;
+        h = h < 10 ? "0" + h : h;
+        var m = nowTime.getMinutes;
+        m = m < 10 ? "0" + m : m;
+
+        var s = nowTime.getSeconds;
+        s = s < 10 ? "0" + s : s;
+        return h + ":" + m + ":" + s;
+      }
+      console.log(getTime());
 
       //五、写一个倒计时
 
