@@ -170,11 +170,54 @@
       }
       console.log(getRandomStr(50));
 
-      //查找字符串'abcoefoxyozzopp'中所有o出现的位置以及次数
+      console.log(
+        "------------查找字符串'abcoefoxyozzopp'中所有o出现的位置以及次数------------"
+      );
+      var str = "abcoefoxyozzopp";
+      var index = str.indexOf("o");
+      var num = 0;
+      while (index !== -1) {
+        console.log(index);
+        num++;
+        index = str.indexOf("o", index + 1);
+      }
+      console.log("o出现了" + num + "次");
 
-      //判断'abcoefoxyozzopp'中出现次数最多的字符，并统计其次数
+      console.log(
+        "------------判断'abcoefoxyozzopp'中出现次数最多的字符，并统计其次数------------"
+      );
+      // var str = "abcoefoxyozzopp";
+      // var obj = {};
+      // for (var i = 0; i < str.length; i++) {
+      //   var chars = str.charAt(i);
+      //   if (obj[chars]) {
+      //     obj[chars]++;
+      //   } else {
+      //     obj[chars] = 1;
+      //   }
+      // }
+      // console.log(obj);
+      // var max = 0;
+      // var alph;
+      // for (var k in obj) {
+      //   if (max < obj[k]) {
+      //     max = obj[k];
+      //     alph = k;
+      //   }
+      // }
+      // console.log("出现次数最多的是" + alph + ",出现了" + max + "次");
 
       //作业 ['red','blue','red','green','pink','red']求red出现的位置和次数
+      var arr = ["red", "blue", "red", "green", "pink", "red"];
+      var index = arr.indexOf("red");
+      // console.log(index);
+      var count = 0;
+      while (index !== -1) {
+        console.log(index);
+        count++;
+        index = arr.indexOf("red", index + 1);
+      }
+      console.log("red出现了" + count + "次");
     </script>
   </body>
 </html>
