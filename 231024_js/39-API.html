@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="olo">奥利奥</button>
+    <button id="tg">糖糕</button> <br />
+    <img src="images/nainiu.jpg" alt="" title="奥利奥" />
+    <script>
+      //修改元素属性 src
+      //1.获取元素
+      var olo = document.getElementById("olo");
+      var tg = document.getElementById("tg");
+      var img = document.querySelector("img");
+      //2.注册事件
+      tg.onclick = function () {
+        img.src = "images/sanhua.jpeg";
+        img.title = "糖糕";
+      };
+      olo.onclick = function () {
+        img.src = "images/nainiu.jpg";
+        img.title = "奥利奥";
+      };
+    </script>
+  </body>
+</html>

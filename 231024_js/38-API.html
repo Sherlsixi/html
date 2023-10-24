@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      p {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button id="btn">唐伯虎</button>
+    <div>123</div> -->
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>123</p>
+    <script>
+      // //事件 三要素 事件源 事件类型 事件处理程序
+      // //（1）事件源 事件被触发的对象 谁 按钮
+      // var btn = document.getElementById("btn");
+      // //(2) 事件类型 如何触发 什么事件 比如鼠标点击（onclick） 还是鼠标经过 还是鼠标按下
+      // //（3）事件处理程序 通过一个函数赋值的方式完成
+      // btn.onclick = function () {
+      //   alert("点秋香");
+      // };
+
+      // //执行事件步骤
+      // //点击div 控制台输出 我被选中了
+      // //1.获取事件源
+      // var div = document.querySelector("div");
+      // //2.绑定事件 注册事件
+      // //div.onclick
+      // //3.添加事件处理程序
+      // div.onclick = function () {
+      //   console.log("我被选中了");
+      // };
+
+      //操作元素
+      //当我们点击了按钮，div里面的文字会发生变化
+      //1.获取元素
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      //2.注册事件
+      btn.onclick = function () {
+        div.innerText = getDate();
+      };
+
+      function getDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        var day = date.getDay();
+        return (
+          "今天是" + year + "年" + month + "月" + dates + "日\t" + arr[day]
+        );
+      }
+      //元素可以不用添加事件
+      var p = document.querySelector("p");
+      p.innerText = getDate();
+
+      //innerText innerHTML的区别
+      //1.innerText 不识别html标签  如<strong></strong> 非标准 去除空格和换行
+
+      //2.innerHTML 识别html标签 W3C标准 保留空格和换行
+      //这两个属性是可读写的 可以获取元素里面的内容
+    </script>
+  </body>
+</html>

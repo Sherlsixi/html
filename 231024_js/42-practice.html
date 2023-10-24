@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        border-bottom: 1px solid #ccc;
+        margin: 100px auto;
+      }
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+      }
+      .box img {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 24px;
+        height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- //仿京东显示密码
+      //点一次按钮显示密码，再点一次又隐藏密码
+      //算法：利用flag变量，来判断flag的值，如果是1就切换为文本框，flag设置为0，如果是0就切换为密码框，flag设置为1 -->
+    <div class="box">
+      <label for="">
+        <img src="images/nainiu.jpg" alt="" id="eye" />
+      </label>
+      <input type="password" name="" id="pwd" />
+    </div>
+    <script>
+      //1.获取元素
+      var eye = document.getElementById("eye");
+      var pwd = document.getElementById("pwd");
+      //2.注册事件 处理程序
+      var flag = 0;
+      eye.onclick = function () {
+        //点击一次之后，flag要变化
+        if (flag === 0) {
+          pwd.type = "text";
+          eye.src = "images/sanhua.jpeg";
+          flag = 1;
+        } else {
+          pwd.type = "password";
+          eye.src = "images/nainiu.jpg";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

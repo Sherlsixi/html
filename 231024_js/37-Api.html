@@ -7,21 +7,21 @@
   </head>
   <body>
     <div id="time">2019-9-9</div>
-    <ul>
+    <!-- <ul>
       <li>知否知否，应是绿肥红瘦1</li>
       <li>知否知否，应是绿肥红瘦2</li>
       <li>知否知否，应是绿肥红瘦3</li>
       <li>知否知否，应是绿肥红瘦4</li>
       <li>知否知否，应是绿肥红瘦5</li>
-    </ul>
+    </ul> -->
     <ol id="ol">
       <li>生僻字</li>
       <li>生僻字</li>
       <li>生僻字</li>
       <li>生僻字</li>
     </ol>
-    <div class="box">盒子</div>
-    <div class="box">盒子</div>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
     <div id="nav">
       <ul>
         <li>首页</li>
@@ -42,6 +42,7 @@
       var timer = document.getElementById("time");
       console.log(timer);
       console.log(typeof timer);
+      //5.console.dir 打印返回的元素对象 更好地查看里面的属性和方法
       console.dir(timer);
 
       //document.getElementsByTagName()
@@ -63,7 +64,31 @@
       var ol = document.getElementById("ol");
       console.log(ol.getElementsByTagName("li"));
 
-      //1.document.getElementsByClassName('类名')
+      //H5新增的3个获取元素的方法
+      //1.document.getElementsByClassName('类名') 根据类名返回元素集合
+      var boxs = document.getElementsByClassName("box");
+      console.log(boxs);
+
+      //2.querySelector 返回指定选择器的第一个元素对象
+      var firstBox = document.querySelector(".box");
+      console.log(firstBox); //盒子1
+      var nav = document.querySelector("#nav");
+      console.log(nav);
+      var li = document.querySelector("li");
+      console.log(li);
+
+      //3.querySelectorAll() 返回指定选择器的所有元素集合 和ClassName差不多 不过更简单
+      var allBox = document.querySelectorAll(".box");
+      console.log(allBox);
+
+      //获取元素
+      //获取body元素
+      // var bodyEle = document.body;
+      // console.log(bodyEle);
+      // console.dir(bodyEle);
+      // //获取html元素
+      // var htmlEle = document.documentElement;
+      // console.log(htmlEle);
     </script>
   </body>
 </html>
