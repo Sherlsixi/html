@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getSum(nums) {
+        var arr = nums.sort(function (a, b) {
+          return a - b;
+        });
+        console.log(arr);
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          if (i % 2 === 0) {
+            sum += arr[i];
+          }
+        }
+        return sum;
+      }
+      var re = getSum([6, 2, 6, 5, 1, 2]);
+      re = getSum([1, 4, 3, 2]);
+
+      console.log(re);
+    </script>
+  </body>
+</html>
