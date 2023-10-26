@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .first {
+        color: #999;
+        outline: none;
+        appearance: none;
+        border: 1px solid #000;
+      }
+      .box {
+        position: relative;
+        height: 150px;
+        margin: 100px auto;
+      }
+      .box .img {
+        height: 140px;
+        background-color: purple;
+      }
+      .box .close-btn {
+        /* display: flex; */
+        position: absolute;
+        top: 2px;
+        right: 50px;
+        width: 22px;
+        height: 22px;
+        background-color: rgb(87, 6, 87);
+        font-size: 19px;
+        color: #fff;
+        text-align: center;
+        line-height: 22px;
+        cursor: pointer;
+
+        /* align-items: center;
+        justify-content: center; */
+      }
+
+      .weibo {
+        width: 100px;
+        height: 200px;
+      }
+      .weibo .open-btn {
+        width: 100px;
+        height: 50px;
+        color: orange;
+        font-size: 14px;
+        border: none;
+      }
+      .weibo .list {
+        flex-direction: column;
+        height: 150px;
+        border: 1px solid rgb(255, 159, 80);
+        border-bottom: none;
+        display: none;
+        text-align: center;
+      }
+      .weibo .list span {
+        width: 100px;
+        height: 50px;
+        border-bottom: 1px solid rgb(255, 159, 80);
+      }
+    </style>
+  </head>
+  <body>
+    <input class="first" type="text" value="邮箱/ID/手机号" />
+
+    <div class="box">
+      <div class="img"></div>
+      <span class="close-btn">x</span>
+    </div>
+
+    <div class="weibo">
+      <button class="open-btn">微博</button>
+      <div class="list">
+        <span>私信</span>
+        <span>评论</span>
+        <span>@我</span>
+      </div>
+    </div>
+
+    <script>
+      var ipt = document.querySelector(".first");
+      ipt.onfocus = function () {
+        if (ipt.value === "邮箱/ID/手机号") {
+          ipt.value = "";
+        }
+        ipt.style.color = "#333";
+        ipt.style.borderColor = "pink";
+      };
+      ipt.onblur = function () {
+        if (ipt.value === "") {
+          ipt.value = "邮箱/ID/手机号";
+        }
+        ipt.style.color = "#999";
+        ipt.style.borderColor = "#000";
+      };
+
+      var btn = document.querySelector(".close-btn");
+      var box = document.querySelector(".box");
+      btn.onclick = function () {
+        box.style.display = "none";
+      };
+
+      var openBtn = document.querySelector(".open-btn");
+      var li = document.querySelector(".list");
+      openBtn.onmouseover = function () {
+        li.style.display = "flex";
+      };
+      openBtn.onmouseout = function () {
+        li.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
