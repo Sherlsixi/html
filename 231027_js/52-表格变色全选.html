@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .data-table {
+        border-collapse: collapse;
+        margin: 100px auto;
+      }
+      .data-table thead {
+        background: rgb(142, 231, 253);
+      }
+      .data-table th,
+      .data-table td {
+        padding: 5px 20px;
+        text-align: center;
+      }
+      .data-table td {
+        color: rgb(3, 3, 175);
+      }
+      .data-table tbody tr {
+        border-bottom: 1px solid #ccc;
+      }
+      .data-table tbody tr.bg {
+        background-color: rgba(142, 231, 253, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="all-check" /></th>
+          <th>代码</th>
+          <th>名称</th>
+          <th>最新公布净值</th>
+          <th>累计净值</th>
+          <th>前单位净值</th>
+          <th>净值增长率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="row-check" /></td>
+          <td>003526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var trList = document.querySelectorAll(".data-table tbody tr");
+      // console.log(trList);
+      for (var tr of trList) {
+        tr.onmouseover = function () {
+          // console.log("hwinh");
+          this.className = "bg";
+        };
+        tr.onmouseout = function () {
+          this.className = "";
+        };
+      }
+      var allCheck = document.getElementById("all-check");
+      var rowChecks = document.querySelectorAll(".data-table .row-check");
+      allCheck.onchange = function () {
+        // console.log(this.checked);
+        for (const rowCheck of rowChecks) {
+          rowCheck.checked = this.checked;
+        }
+      };
+      for (const rowCheck of rowChecks) {
+        rowCheck.onchange = function () {
+          // console.log(this);
+          // console.log(this.checked);
+          var isAllChecked = true;
+          //当前rowCheck被选中，被选中之后要检查所有rowCheck
+          //如果所有的rowCheck都为true，则把allCheck也变成true,否则allCheck变为false
+          for (const rowCheck of rowChecks) {
+            if (rowCheck.checked === false) {
+              isAllChecked = false;
+              break;
+            }
+          }
+          allCheck.checked = isAllChecked;
+        };
+      }
+    </script>
+  </body>
+</html>
