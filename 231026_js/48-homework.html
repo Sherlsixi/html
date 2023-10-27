@@ -81,6 +81,8 @@
       </div>
     </div>
 
+    <button class="turn-light">开关灯</button>
+
     <script>
       var ipt = document.querySelector(".first");
       ipt.onfocus = function () {
@@ -111,6 +113,18 @@
       };
       openBtn.onmouseout = function () {
         li.style.display = "none";
+      };
+
+      var lightUp = document.querySelector(".turn-light");
+      var flag = 0;
+      lightUp.onclick = function () {
+        if (flag === 0) {
+          document.body.style.backgroundColor = "#000";
+          flag = 1;
+        } else {
+          document.body.style.backgroundColor = "#fff";
+          flag = 0;
+        }
       };
     </script>
   </body>
