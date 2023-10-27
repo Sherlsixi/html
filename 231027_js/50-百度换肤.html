@@ -38,5 +38,15 @@
       <li><img src="images/3.jpg" /></li>
       <li><img src="images/4.jpg" /></li>
     </ul>
+    <script>
+      var img = document.querySelector(".baidu").querySelectorAll("img");
+      // console.log(img);
+      for (i = 0; i < img.length; i++) {
+        img[i].onclick = function () {
+          document.body.style.background = "url(" + this.src + ")";
+          document.body.style.backgroundSize = "cover";
+        };
+      }
+    </script>
   </body>
 </html>
