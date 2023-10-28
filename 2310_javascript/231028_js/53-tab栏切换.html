@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .tab {
+        width: 978px;
+        margin: 100px auto;
+      }
+      .tab .tab_list {
+        display: flex;
+        height: 39px;
+        background-color: #ececec;
+        border: 1px solid #ccc;
+      }
+      .tab_list li {
+        list-style: none;
+
+        padding: 0 20px;
+        line-height: 39px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .tab_list .current {
+        background-color: #e4393c;
+        color: #fff;
+      }
+      .tab_con .item {
+        display: none;
+      }
+      .tab_con .item.current {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <!-- <div class="tab_list"></div> -->
+      <ul class="tab_list">
+        <li class="current">商品介绍</li>
+        <li>规格与包装</li>
+        <li>售后保障</li>
+        <li>商品评价</li>
+        <li>手机社区</li>
+      </ul>
+      <div class="tab_con">
+        <div class="item current">商品介绍模块内容</div>
+        <div class="item">规格与包装模块内容</div>
+        <div class="item">售后保障模块内容</div>
+        <div class="item">商品评价(50000)模块内容</div>
+        <div class="item">手机社区模块内容</div>
+      </div>
+    </div>
+    <script>
+      var lis = document.querySelectorAll(".tab_list li");
+      var items = document.querySelectorAll(".tab_con .item");
+
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].setAttribute("index", i);
+        lis[i].onclick = function () {
+          var index;
+          for (var i = 0; i < lis.length; i++) {
+            lis[i].className = "";
+            items[i].className = "item";
+            // if (lis[i] === this) {
+            //   index = i;
+            // }
+          }
+          this.className = "current";
+          // items[index].className = "item current";
+          var index = this.getAttribute("index");
+          items[index].className = "item current";
+        };
+      }
+    </script>
+  </body>
+</html>
