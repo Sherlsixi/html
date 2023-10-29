@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=
-  , initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      input {
+        width: 200px;
+        margin: 100px auto;
+        color: #333;
+        outline: none;
+      }
+      input::placeholder {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <!-- //案例：分时显示不同图片，显示不同问候语
@@ -16,11 +23,14 @@
     <!-- //仿京东显示密码
     //点一次按钮显示密码，再点一次又隐藏密码 -->
 
+    <!-- 再来一遍 -->
+
     <!-- 开关灯 点一次按钮页面变黑关灯 再点一次页面变白开灯-->
 
     <!-- 点击x按钮 关闭 -->
 
     <!-- 输入框聚焦失焦事件 -->
+    <input type="text" placeholder="手机" />
 
     <!-- 新浪下拉菜单 四个-->
 
@@ -35,6 +45,23 @@
     <!--表格鼠标悬浮变色 及全选 -->
 
     <!-- 动态生成表格 成绩表 加删除功能 -->
-    <script></script>
+
+    <!-- 小天使跟随鼠标 -->
+
+    <script>
+      // var ipt = document.querySelector("input");
+      // ipt.onfocus = function () {
+      //   if (ipt.value === "手机") {
+      //     ipt.value = "";
+      //   }
+      //   ipt.style.color = "#333";
+      // };
+      // ipt.onblur = function () {
+      //   if (ipt.value === "") {
+      //     ipt.value = "手机";
+      //   }
+      //   ipt.style.color = "#999";
+      // };
+    </script>
   </body>
 </html>
