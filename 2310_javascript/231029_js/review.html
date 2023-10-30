@@ -10,18 +10,8 @@
         padding: 0;
         box-sizing: border-box;
       }
-      textarea {
-        height: 100px;
-        resize: none;
-      }
-      ul {
-        margin-top: 50px;
-      }
-      li {
-        list-style: none;
+      img {
         width: 300px;
-        background-color: pink;
-        margin: 15px;
       }
     </style>
   </head>
@@ -31,8 +21,7 @@
 
     <!-- //仿京东显示密码
     //点一次按钮显示密码，再点一次又隐藏密码 -->
-
-    <!-- 再来一遍 -->
+    <!-- 为啥input外面要加label img的属性 -->
 
     <!-- 开关灯 点一次按钮页面变黑关灯 再点一次页面变白开灯-->
 
@@ -44,7 +33,8 @@
     <!-- 新浪下拉菜单 四个-->
 
     <!-- 再来一遍 -->
-
+    <input type="submit" value="免费注册" />
+    <button type=""></button>
     <!-- 密码框格式提醒 -->
     <!-- 再来一遍 -->
 
@@ -54,25 +44,13 @@
     <!-- 再来一遍 -->
 
     <!-- 发布删除留言帖子 -->
-    <textarea name="" id=""></textarea>
-    <button>发布</button>
-    <ul></ul>
+
     <!--表格鼠标悬浮变色 及全选 -->
 
     <!-- 动态生成表格 成绩表 加删除功能 -->
 
     <!-- 小天使跟随鼠标 -->
 
-    <script>
-      var text = document.querySelector("textarea");
-      var btn = document.querySelector("button");
-      var ul = document.querySelector("ul");
-      // console.log(text.value);
-      btn.onclick = function () {
-        var li = document.createElement("li");
-        li.innerHTML = text.value;
-        ul.insertBefore(li, ul.children[0]);
-      };
-    </script>
+    <script></script>
   </body>
 </html>
