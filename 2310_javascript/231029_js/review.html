@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      input {
-        width: 200px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .register {
+        display: flex;
+        width: 300px;
         margin: 100px auto;
-        color: #333;
+      }
+      .register .ipt {
         outline: none;
       }
-      input::placeholder {
+      .message {
+        display: inline-block;
+        font-size: 12px;
+        color: #999;
+        padding-left: 20px;
+        background: url(images/mess.png) no-repeat left center;
+      }
+      .wrong {
         color: red;
+        background-image: url(images/wrong.png);
+      }
+      .right {
+        color: green;
+        background-image: url(images/right.png);
       }
     </style>
   </head>
@@ -30,11 +49,17 @@
     <!-- 点击x按钮 关闭 -->
 
     <!-- 输入框聚焦失焦事件 -->
-    <input type="text" placeholder="手机" />
+    <!-- 再来一遍 -->
 
     <!-- 新浪下拉菜单 四个-->
 
+    <!-- 再来一遍 -->
+
     <!-- 密码框格式提醒 -->
+    <div class="register">
+      <input type="password" class="ipt" />
+      <p class="message">请输入6~16位密码</p>
+    </div>
 
     <!-- 淘宝京东商品详情页 tab栏切换 -->
 
@@ -49,19 +74,21 @@
     <!-- 小天使跟随鼠标 -->
 
     <script>
-      // var ipt = document.querySelector("input");
-      // ipt.onfocus = function () {
-      //   if (ipt.value === "手机") {
-      //     ipt.value = "";
-      //   }
-      //   ipt.style.color = "#333";
-      // };
-      // ipt.onblur = function () {
-      //   if (ipt.value === "") {
-      //     ipt.value = "手机";
-      //   }
-      //   ipt.style.color = "#999";
-      // };
+      var ipt = document.querySelector(".ipt");
+      var msg = document.querySelector(".message");
+      // console.log(ipt);
+      // console.log(msg);
+      ipt.onblur = function () {
+        if (this.value.length < 6 || this.value.length > 16) {
+          // console.log("错误");
+          msg.className = "message wrong";
+          msg.innerHTML = "您输入的位数不对";
+        } else {
+          // console.log("正确");
+          msg.className = "message right";
+          msg.innerHTML = "输入正确";
+        }
+      };
     </script>
   </body>
 </html>
