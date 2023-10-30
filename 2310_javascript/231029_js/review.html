@@ -10,28 +10,18 @@
         padding: 0;
         box-sizing: border-box;
       }
-      .register {
-        display: flex;
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+      ul {
+        margin-top: 50px;
+      }
+      li {
+        list-style: none;
         width: 300px;
-        margin: 100px auto;
-      }
-      .register .ipt {
-        outline: none;
-      }
-      .message {
-        display: inline-block;
-        font-size: 12px;
-        color: #999;
-        padding-left: 20px;
-        background: url(images/mess.png) no-repeat left center;
-      }
-      .wrong {
-        color: red;
-        background-image: url(images/wrong.png);
-      }
-      .right {
-        color: green;
-        background-image: url(images/right.png);
+        background-color: pink;
+        margin: 15px;
       }
     </style>
   </head>
@@ -56,17 +46,17 @@
     <!-- 再来一遍 -->
 
     <!-- 密码框格式提醒 -->
-    <div class="register">
-      <input type="password" class="ipt" />
-      <p class="message">请输入6~16位密码</p>
-    </div>
+    <!-- 再来一遍 -->
 
     <!-- 淘宝京东商品详情页 tab栏切换 -->
 
     <!-- 百度换肤 -->
+    <!-- 再来一遍 -->
 
     <!-- 发布删除留言帖子 -->
-
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul></ul>
     <!--表格鼠标悬浮变色 及全选 -->
 
     <!-- 动态生成表格 成绩表 加删除功能 -->
@@ -74,20 +64,14 @@
     <!-- 小天使跟随鼠标 -->
 
     <script>
-      var ipt = document.querySelector(".ipt");
-      var msg = document.querySelector(".message");
-      // console.log(ipt);
-      // console.log(msg);
-      ipt.onblur = function () {
-        if (this.value.length < 6 || this.value.length > 16) {
-          // console.log("错误");
-          msg.className = "message wrong";
-          msg.innerHTML = "您输入的位数不对";
-        } else {
-          // console.log("正确");
-          msg.className = "message right";
-          msg.innerHTML = "输入正确";
-        }
+      var text = document.querySelector("textarea");
+      var btn = document.querySelector("button");
+      var ul = document.querySelector("ul");
+      // console.log(text.value);
+      btn.onclick = function () {
+        var li = document.createElement("li");
+        li.innerHTML = text.value;
+        ul.insertBefore(li, ul.children[0]);
       };
     </script>
   </body>
