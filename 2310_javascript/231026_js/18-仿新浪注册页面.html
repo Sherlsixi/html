@@ -49,8 +49,6 @@
         // 根据表单里面值的长度 ipt.value.length
         if (this.value.length < 6 || this.value.length > 16) {
           // console.log('错误');
-          var cn = message.className;
-          console.log(cn);
           message.className = "message wrong";
           message.innerHTML = "您输入的位数不对要求6~16位";
         } else {
