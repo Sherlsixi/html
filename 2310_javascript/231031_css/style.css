@@ -1,0 +1,11 @@
+h2 {
+  font-family: "Microsoft yaHei";
+}
+p {
+  font-family: "微软雅黑";
+}
+/* font:font-style font-weight font-size/line-height font-family 必须按这个顺序写 */
+/* font-size font-family一定要写 */
+div {
+  font: italic 700 16px "Microsoft yaHei";
+}
