@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .ad {
+        /* width: 200px;
+        height: 200px; */
+        background-color: pink;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../../images/ad.jpg" alt="" class="ad" />
+    <script>
+      var ad = document.querySelector(".ad");
+      // setTimeout(function () {
+      //   ad.style.display = "none";
+      // }, 3000);
+      function callback() {
+        ad.style.display = "none";
+      }
+      setTimeout(callback, 3000);
+    </script>
+  </body>
+</html>
