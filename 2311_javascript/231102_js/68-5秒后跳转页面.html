@@ -14,14 +14,16 @@
       var div = document.querySelector("div");
       btn.addEventListener("click", function () {
         var time = 5;
-        setInterval(function () {
+        countDown();
+        setInterval(countDown, 1000);
+        function countDown() {
           if (time === 0) {
             location.href = "http://www.itcast.cn";
           } else {
             div.innerHTML = time + "秒后跳转到新页面";
             time--;
           }
-        }, 1000);
+        }
       });
     </script>
   </body>
