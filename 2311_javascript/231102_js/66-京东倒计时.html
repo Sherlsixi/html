@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: 200px;
+      }
+
+      span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span class="hour">1</span>
+      <span class="minute">2</span>
+      <span class="second">3</span>
+    </div>
+    <script>
+      var hour = document.querySelector(".hour");
+      var minute = document.querySelector(".minute");
+      var second = document.querySelector(".second");
+      var inputTime = +new Date("2023-11-02 18:00:00");
+      function countDown() {
+        var nowTime = Date.now();
+        var times = (inputTime - nowTime) / 1000;
+        var h = parseInt(times / 60 / 60);
+        h = h < 10 ? "0" + h : h;
+        hour.innerHTML = h;
+        var m = parseInt((times / 60) % 60);
+        m = m < 10 ? "0" + m : m;
+        minute.innerHTML = m;
+        var s = parseInt(times % 60);
+        s = s < 10 ? "0" + s : s;
+        second.innerHTML = s;
+      }
+      countDown();
+      setInterval(countDown, 1000); //为什么这里的countDown不用写（）
+    </script>
+  </body>
+</html>

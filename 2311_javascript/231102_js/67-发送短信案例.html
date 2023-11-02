@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    手机号码：<input type="number" />
+    <button>发送短信</button>
+    <script>
+      var btn = document.querySelector("button");
+      var time = 5;
+      btn.addEventListener("click", function () {
+        this.disabled = true;
+        // var time = 5; //放在这里和放在外面当全局变量效果一样
+        var timer = setInterval(function () {
+          if (time === 0) {
+            clearInterval(timer);
+            btn.disabled = false;
+            btn.innerHTML = "发送短信";
+          } else {
+            btn.innerHTML = time + "秒后再发送短信";
+            time--;
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
