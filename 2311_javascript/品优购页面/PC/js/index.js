@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
     arrow_r.style.display = "block";
     clearInterval(timer);
     timer = null;
+    console.log(timer);
   });
   focus.addEventListener("mouseleave", function () {
     arrow_l.style.display = "none";
