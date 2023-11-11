@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
     arrow_l.style.display = "block";
     arrow_r.style.display = "block";
     clearInterval(timer);
-    timer = null;
+    timer = null; //这个是什么意思
     console.log(timer);
   });
   focus.addEventListener("mouseleave", function () {

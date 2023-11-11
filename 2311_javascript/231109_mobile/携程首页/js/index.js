@@ -19,10 +19,10 @@ window.addEventListener("DOMContentLoaded", function () {
     if (index >= 3) {
       index = 0;
       // console.log(index);
-      //去掉过渡效果 这样让我们的ul快速跳到目标位置
-      ul.style.transition = "none";
       //利用最新的索引号乘以宽度 去滚动图片
       var translatex = -index * w;
+      //去掉过渡效果 这样让我们的ul快速跳到目标位置
+      ul.style.transition = "none";
       ul.style.transform = "translateX(" + translatex + "px)";
     } else if (index < 0) {
       index = 2;
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
   ul.addEventListener("touchstart", function (e) {
     startX = e.targetTouches[0].pageX;
     // console.log(startX);
-    clearInterval(timer);
+    clearInterval(timer); //为什么不加timer=null
   });
   ul.addEventListener("touchmove", function (e) {
     //计算移动距离
