@@ -35,10 +35,11 @@
       .tab_con .item {
         display: none;
       }
-      .tab_con .item.current {
+      /* .tab_con .item.current {
         display: block;
-      }
+      } */
     </style>
+    <script src="../../js/jquery-3.7.1.js"></script>
   </head>
   <body>
     <div class="tab">
@@ -51,7 +52,7 @@
         <li>手机社区</li>
       </ul>
       <div class="tab_con">
-        <div class="item current">商品介绍模块内容</div>
+        <div class="item" style="display: block">商品介绍模块内容</div>
         <div class="item">规格与包装模块内容</div>
         <div class="item">售后保障模块内容</div>
         <div class="item">商品评价(50000)模块内容</div>
@@ -59,26 +60,13 @@
       </div>
     </div>
     <script>
-      var lis = document.querySelectorAll(".tab_list li");
-      var items = document.querySelectorAll(".tab_con .item");
-
-      for (var i = 0; i < lis.length; i++) {
-        lis[i].setAttribute("index", i);
-        lis[i].onclick = function () {
-          // var index;
-          for (var i = 0; i < lis.length; i++) {
-            lis[i].className = "";
-            items[i].className = "item";
-            // if (lis[i] === this) {
-            //   index = i;
-            // }
-          }
-          this.className = "current";
-          // items[index].className = "item current";
-          var index = this.getAttribute("index");
-          items[index].className = "item current";
-        };
-      }
+      $(function () {
+        $(".tab_list li").click(function () {
+          $(this).addClass("current").siblings().removeClass("current");
+          var index = $(this).index();
+          $(".tab_con .item").eq(index).show().siblings().hide();
+        });
+      });
     </script>
   </body>
 </html>
