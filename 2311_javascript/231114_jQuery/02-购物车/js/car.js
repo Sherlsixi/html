@@ -22,6 +22,12 @@ $(function () {
     } else {
       $(".checkall").prop("checked", false);
     }
+    //小复选框如果选中 则让当前商品模块背景色变色
+    if ($(this).prop("checked")) {
+      $(this).parents(".cart-item").addClass("check-cart-item");
+    } else {
+      $(this).parents(".cart-item").removeClass("check-cart-item");
+    }
   });
   $(".increment").click(function () {
     // console.log($(this).siblings(".itxt").val());
@@ -40,6 +46,7 @@ $(function () {
       .parents(".p-num")
       .siblings(".p-sum")
       .html("¥" + (p * n).toFixed(2));
+    getSum();
   });
   $(".decrement").click(function () {
     var n = $(this).siblings(".itxt").val();
@@ -59,6 +66,7 @@ $(function () {
       .parents(".p-num")
       .siblings(".p-sum")
       .html("¥" + (p * n).toFixed(2));
+    getSum();
   });
   //3.用户修改文本框 计算 小计模块
   $(".itxt").change(function () {
@@ -69,5 +77,36 @@ $(function () {
       .parents(".p-num")
       .siblings(".p-sum")
       .html("¥" + (p * n).toFixed(2));
+    getSum();
+  });
+  getSum();
+  //4.总计总额模块
+  function getSum() {
+    var count = 0;
+    var money = 0;
+    $(".itxt").each(function (i, ele) {
+      count += parseInt($(ele).val());
+    });
+    $(".amount-sum em").text(count);
+    $(".p-sum").each(function (i, ele) {
+      money += parseFloat($(ele).text().substr(1));
+    });
+    $(".price-sum em").text("¥" + money.toFixed(2));
+  }
+  //5.删除商品模块
+  //（1）商品后面的删除按钮
+  $(".p-action a").click(function () {
+    $(this).parents(".cart-item").remove();
+    getSum();
+  });
+  //（2）删除选中的商品
+  $(".remove-batch").click(function () {
+    //删除的是小的复选框被选中的商品
+    $(".j-checkbox:checked").parents(".cart-item").remove();
+    getSum();
+  });
+  //（3）清空购物车 删除全部商品
+  $(".clear-all").click(function () {
+    $(".cart-item").remove();
   });
 });

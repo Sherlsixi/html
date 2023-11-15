@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #faf8ef;
+  color: #776e65;
+}
+div {
+  display: block;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+/* 游戏页面头部信息 */
+/* 分数计算 */
+.heading {
+  display: flex;
+  justify-content: space-between;
+  height: 112px;
+}
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  display: block;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+.scores-container {
+  display: flex;
+}
+
+.score-container,
+.best-container {
+  height: 55px;
+  background: #bbada0;
+  padding: 15px 25px;
+  font-size: 25px;
+  line-height: 47px;
+  color: white;
+  margin-top: 8px;
+  border-radius: 3px;
+  text-align: center;
+}
+.score-container {
+  position: relative;
+  width: 65px;
+}
+.best-container {
+  position: relative;
+  width: 124px;
+  margin-left: 5px;
+}
+.score-container:after {
+  content: "SCORE";
+}
+.best-container:after {
+  content: "BEST";
+}
+.score-container:after,
+.best-container:after {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  /* text-transform: uppercase; */
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: #eee4da;
+  font-size: 13px;
+}
+
+/* 游戏主要区域 */
+.game-container {
+  width: 500px;
+  height: 500px;
+  margin-top: 40px;
+  padding: 15px;
+  background: #bbada0;
+  border-radius: 6px;
+}
+.grid-row {
+  display: flex;
+  margin-bottom: 15px;
+}
+.grid-container .grid-cell {
+  width: 106.25px;
+  height: 106.25px;
+  background: rgba(238, 228, 218, 0.35);
+  margin-right: 15px;
+  border-radius: 3px;
+}
+.grid-cell:last-child {
+  margin-right: 0;
+}
