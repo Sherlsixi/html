@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2048</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -16,6 +18,16 @@
           <div class="score-container">0</div>
           <div class="best-container">0</div>
         </div>
+      </div>
+      <!-- 开始新游戏按钮 -->
+      <div class="above-game">
+        <p class="game-intro">
+          Join the tiles, get to
+          <strong>2048!</strong>
+          <br />
+          <a href="" class="how-to-play-link">How to play →</a>
+        </p>
+        <a href="#" class="restart-button">New Game</a>
       </div>
       <!-- 游戏主要区域 -->
       <div class="game-container">
@@ -46,6 +58,8 @@
             <div class="grid-cell"></div>
           </div>
         </div>
+        <!-- 数字方块 -->
+        <div class="tile-container"></div>
       </div>
     </div>
   </body>
