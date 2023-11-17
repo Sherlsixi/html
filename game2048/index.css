@@ -9,6 +9,11 @@ body {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
+button {
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
 div {
   display: block;
 }
@@ -110,6 +115,55 @@ a {
   background: #bbada0;
   border-radius: 6px;
 }
+/* 游戏结束提示框 */
+.game-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(238, 228, 218, 0.73);
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.game-message p {
+  font-size: 60px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+}
+.game-message button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  color: #f9f6f2;
+  border: none;
+  height: 40px;
+  line-height: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 9px;
+}
+.game-message.game-won {
+  background: rgba(237, 194, 46, 0.5);
+  color: #f9f6f2;
+}
+.game-message .keep-playing-button {
+  display: none;
+}
+.game-message.game-won .keep-playing-button {
+  display: inline-block;
+}
+
+.game-message.game-won,
+.game-message.game-over {
+  display: flex;
+}
 /* 网格背景 */
 .grid-row {
   display: flex;
@@ -147,6 +201,7 @@ a {
 .tile {
   position: absolute;
   overflow: hidden;
+  transition: transform 0.1s linear;
 }
 .tile.tile-2 .tile-inner {
   background: #eee4da;
