@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let list = ["周烁", "罗瑜潇", "奥利奥", "糖糕"];
+      let index = getRandom(0, 3);
+      console.log(list[index]);
+    </script>
+  </body>
+</html>
