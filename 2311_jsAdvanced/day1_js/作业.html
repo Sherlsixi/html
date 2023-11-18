@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      th {
+        padding: 5px 30px;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+      }
+      tr {
+        height: 40px;
+      }
+      td,
+      th {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2023年11月消费支出</h2>
+    <table>
+      <tr>
+        <th>银行卡金额</th>
+        <th>电费</th>
+        <th>水费</th>
+        <th>网费</th>
+        <th>银行卡余额</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <script>
+      // 下面代码输入结果是？ （）
+      // const num = 10;
+      // console.log(num + 11);
+      // // 21
+      // console.log(num + "11");
+      // // 1011
+      // console.log(num + +"11");
+      // // 21
+
+      //下面代码输入结果是？ （）
+
+      // const num = 10;
+      //   console.log(typeof num + "11"); //number11
+      //   console.log(typeof (num + "11")); //string
+      //   console.log(typeof (num + +"11"));//number
+
+      // 依次询问并获取用户的姓名、年龄、性别，收集数据之后在控制台依次打印出来。
+      // let uname = prompt("请输入姓名");
+      // let age = prompt("请输入年龄");
+      // let gender = prompt("请输入性别");
+      // console.log(`用户的姓名：${uname}`);
+      // console.log(`用户的年龄：${age}`);
+      // console.log(`用户的性别：${gender}`);
+
+      //1、询问用户年龄，用户输入年龄后，把用户输入的年龄增加 5 岁
+      // 2、增加 5 岁后，通过弹出框提示用户 “ 据我估计，五年后，你可能 XX 岁了”
+      // let age = +prompt("您现在多少岁了？");
+      // alert(`据我估计，五年后，你可能${age + 5}岁了`);
+
+      //1、用户输入总的银行卡金额，依次输入本月花费的电费，水费，网费。
+      // 2、页面打印一个表格，计算出本月银行卡还剩下的余额。
+      let allMoney = +prompt("请输入银行卡金额");
+      let dian = +prompt("请输入电费");
+      let water = +prompt("请输入水费");
+      let net = +prompt("请输入网费");
+      let tds = document.querySelectorAll("td");
+      // console.log(tds);
+      tds[0].innerText = allMoney;
+      tds[1].innerText = dian;
+      tds[2].innerText = water;
+      tds[3].innerText = net;
+      tds[4].innerText = allMoney - dian - water - net;
+    </script>
+  </body>
+</html>

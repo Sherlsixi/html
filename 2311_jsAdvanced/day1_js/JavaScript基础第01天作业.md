@@ -11,38 +11,42 @@ https://ks.wjx.top/vm/YXyjrAe.aspx#
 
 1. 请说出变量的使用场景？
 
-```
+需要存储数据的时候
 
 ```
 
 2. 请说出基本数据类型有哪 5 种？
 
-```
+数字型、字符串型、布尔型、未定义型undefined、空类型null
 
 ```
 
 3. 请说出模板字符串使用方法？
 
-```
+`字符串${变量}字符串`
 
-```
+````
 
 4. 下面代码输入结果是？ （）
 
 ```javascript
 const num = 10;
 console.log(num + 11);
+21
 console.log(num + "11");
+1011
 console.log(num + +"11");
-```
+21
+````
 
 5. 下面代码输入结果是？ （）
 
 ```javascript
 const num = 10;
-console.log(typeof num + "11");
-console.log(typeof (num + "11"));
-console.log(typeof (num + +"11"));
+console.log(typeof num + "11"); //number错误 答案 number11
+
+console.log(typeof (num + "11")); //string
+console.log(typeof (num + +"11")); //number
 ```
 
 ## 编程题
