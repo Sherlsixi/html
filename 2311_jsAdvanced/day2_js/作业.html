@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 打印0-20之间的整数, 将每个数输出到控制台
+
+      // let num = 0;
+      // while (num <= 20) {
+      //   console.log(num);
+      //   num++;
+      // }
+
+      // 2. 计算1-1000之间的累加和，并且打印输出到页面中
+
+      // let sum = 0;
+      // let i = 1;
+      // while (i <= 1000) {
+      //   sum += i;
+      //   i++;
+      // }
+      // document.write(sum);
+
+      // 3. 页面依次打印 100-200之间,可以被6整除的数字
+
+      // let i = 100;
+      // while (i <= 200) {
+      //   if (i % 6 === 0) {
+      //     document.write(`${i}<br>`);
+      //   }
+      //   i++;
+      // }
+
+      // 4. 用户弹窗输入两个数字，页面输出两个数字中的最大值（请使用三元运算符完成）
+
+      // let num1 = +prompt("请输入第一个数字");
+      // let num2 = +prompt("请输入第二个数字");
+      // document.write(`最大值为：${num1 > num2 ? num1 : num2}`);
+
+      // 5. **用户输入一个数，  计算 1 到这个数的累加和**
+
+      // let num = +prompt("请输入一个数");
+      // var i = 1;
+      // var sum = 0;
+      // while (i <= num) {
+      //   sum += i;
+      //   i++;
+      // }
+      // console.log(sum);
+
+      // 6. **输出成绩案例（请使用if多分支来书写程序）**
+      //接收用户输入的分数，根据分数输出对应的等级字母 A、B、C、D、E，
+      //  - 90分(含)以上 ，输出：A
+      //    80分(含)~ 90 分(不含)，输出：B
+      //     70分(含)~ 80 分(不含)，输出：C
+      //     60分(含)~ 70 分(不含)，输出：D
+      //  - 60分(不含) 以下，输出 E
+
+      // let score = +prompt("请输入成绩");
+      // if (score >= 90) {
+      //   console.log("A");
+      // } else if (score >= 80) {
+      //   console.log("B");
+      // } else if (score >= 70) {
+      //   console.log("C");
+      // } else if (score >= 60) {
+      //   console.log("D");
+      // } else {
+      //   console.log("E");
+      // }
+
+      // 7. **输出星期练习（请使用switch分支语句来书写程序）**
+      // 请用户输入1个星期数. 就将对应的英文的星期打印出来.
+      //  - 比如用户输入'星期一'， 则 页面可以打印  monday
+      //  - 英文自己查有道。比如星期一是  monday  星期二是 tuesday
+
+      // let num = +prompt("请输入一个星期数");
+      // switch (num) {
+      //   case 1:
+      //     document.write("monday");
+      //     break;
+      //   case 2:
+      //     document.write("tuesday");
+      //     break;
+      //   case 3:
+      //     document.write("wednesday");
+      //     break;
+      //   case 4:
+      //     document.write("thursday");
+      //     break;
+      //   case 5:
+      //     document.write("friday");
+      //     break;
+      //   case 6:
+      //     document.write("saturday");
+      //     break;
+      //   case 7:
+      //     document.write("sunday");
+      //     break;
+      //   default:
+      //     alert("请输入正确的值");
+      // }
+
+      // 8. **用户登录验证**
+      // 接收用户输入的用户名和密码，若用户名为 “admin” ,且密码为 “123456” ,则提示用户登录成功!  否则，让用户一直输入。
+
+      // while (true) {
+      //   let uname = prompt("请输入用户名");
+      //   let pwd = prompt("请输入密码");
+      //   if (uname === "admin" && pwd === "123456") {
+      //     alert("登陆成功！");
+      //     break;
+      //   }
+      // }
+
+      //需求：根据用户选择计算两个数的结果：
+      // **题目描述：**
+      // 打开页面出现一个提示框，注意是一直提示的，'请您选择 + - * / ，如果输入q，则是退出结束程序
+      // - 如果输入的是 + - * / 其中任何一个，比如用户输入是 + ，则是计算求和，如果用户输入是 *  则是计算乘积
+      //   - 则提示第一个弹窗，提示用户：'请您输入第一个数字'
+      //   - 输入完毕则继续提示第二个弹窗，提示用户：'请您输入第二个数字'
+      //   - 都输入完毕，则通过警示框 alert 输出结果
+      // - 如果输入是 q，则结束程序
+      // 提示：多分支请使用 if 多分支来完成
+
+      while (true) {
+        let str = prompt("请您选择+-*/，如果输入q，则是退出程序");
+        if (str === "q") {
+          break;
+        }
+        if (str === "+" || str === "-" || str === "*" || str === "/") {
+          let num1 = +prompt("请输入第一个数字");
+          let num2 = +prompt("请输入第二个数字");
+          if (str === "+") {
+            alert(num1 + num2);
+          } else if (str === "-") {
+            alert(num1 - num2);
+          } else if (str === "*") {
+            alert(num1 * num2);
+          } else if (str === "/") {
+            alert(num1 / num2);
+          }
+        } else {
+          alert("请输入正确的运算符");
+        }
+      }
+    </script>
+  </body>
+</html>
