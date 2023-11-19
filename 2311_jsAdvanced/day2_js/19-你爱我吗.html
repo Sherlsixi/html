@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // while (true) {
+      //   let str = prompt('你爱我吗')
+      //   // 退出条件 爱
+      //   if (str === '爱') {
+      //     break
+      //   }
+      // }
+
+      // let sum = 100;
+      // let str = +prompt("请您选择操作：\n1.存钱\n2.取钱\n3.查看余额\n4.退出");
+      // while (str !== 4) {
+      //   switch (str) {
+      //     case 1:
+      //       let moneyIn = +prompt("请输入存款金额:");
+      //       sum += moneyIn;
+      //       break;
+      //     // alert(`当前余额为${sum}`);
+      //     case 2:
+      //       moneyOut = +prompt("请输入取出金额:");
+      //       sum -= moneyOut;
+      //       break;
+      //     case 3:
+      //       alert(`当前余额为${sum}`);
+      //       break;
+      //     default:
+      //       alert("请输入正确的数字");
+      //   }
+      //   str = +prompt("请您选择操作：\n1.存钱\n2.取钱\n3.查看余额\n4.退出");
+      // }
+
+      let sum = 100;
+      while (true) {
+        let str = +prompt(`
+        请您选择操作：
+                1.存钱
+                2.取钱
+                3.查看余额
+                4.退出
+        `);
+        if (str === 4) {
+          break;
+        }
+        switch (str) {
+          case 1:
+            let moneyIn = +prompt("请输入存款金额:");
+            sum += moneyIn;
+            break;
+          case 2:
+            let moneyOut = +prompt("请输入取出金额:");
+            sum -= moneyOut;
+            break;
+          case 3:
+            alert(`当前余额为${sum}`);
+            break;
+          default:
+            alert("请输入正确的数字");
+        }
+      }
+    </script>
+  </body>
+</html>
