@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 1. 字面量声明数组
+      // let arr = [1, 2, 'pink', true]
+      // 2. 使用new Array 构造函数声明   了解
+      // let arr = new Array(1, 2, 3, 4)
+      // console.log(arr)
+
+      //数组求和
+      let arr = [20, 30, 12, 10, 5];
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      console.log(sum);
+      //数组求平均值
+      console.log(`平均值为${sum / arr.length}`);
+
+      //求数组最大值最小值
+      let arr1 = [3, 7, 10, 5, 25, 16, 30];
+      let max = arr[0];
+      let min = arr1[0];
+      for (let i = 1; i < arr1.length; i++) {
+        // if (max < arr[i]) {
+        //   max = arr[i];
+        // }
+        // if (min > arr[i]) {
+        //   min = arr[i];
+        // }
+        max = max < arr[i] ? arr[i] : max;
+        min = min > arr[i] ? arr[i] : min;
+      }
+      console.log(max);
+      console.log(min);
+    </script>
+  </body>
+</html>

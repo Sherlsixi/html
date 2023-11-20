@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 外层循环打印 第 n 天
+      for (let i = 1; i <= 3; i++) {
+        document.write(`第${i}天<br>`);
+        // 里层循环打印 第几个单词
+        for (let j = 1; j <= 5; j++) {
+          document.write(`记住了第${j}个单词<br>`);
+        }
+      }
+
+      for (let i = 1; i <= 3; i++) {
+        document.write(`第${i}天<br>`);
+        for (let j = 1; j <= i; j++) {
+          document.write(`做了第${j}个俯卧撑<br>`);
+        }
+      }
+
+      //用户输入打印星星的行数和列数
+      let row = +prompt("请输入行数");
+      let col = +prompt("请输入列数");
+      for (let i = 1; i <= row; i++) {
+        for (let j = 1; j <= col; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+
+      //打印直角三角形
+      for (let i = 1; i <= 5; i++) {
+        let str = "";
+        for (let j = 1; j <= i; j++) {
+          // document.write("*");
+          str += "*";
+        }
+        // document.write("<br>");
+        console.log(str);
+      }
+
+      //打印九九乘法表
+      for (let i = 1; i <= 9; i++) {
+        let str = "";
+        for (let j = 1; j <= i; j++) {
+          // document.write(`${j}*${i}=${i * j}\n`);
+          str += `${j}*${i}=${i * j} `;
+        }
+        // document.write(`<br>`);
+        console.log(str);
+      }
+
+      document.write("----------------------<br>");
+      //打印倒三角
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= i; j--) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

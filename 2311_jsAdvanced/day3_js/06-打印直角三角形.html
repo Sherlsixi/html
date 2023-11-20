@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        display: inline-block;
+        width: 70px;
+        padding: 5px 10px;
+        border: 1px solid pink;
+        margin: 2px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgb(255, 194, 204, 0.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // // 1. 外层循环控制行数
+      // for (let i = 1; i <= 5; i++) {
+      //   // 2. 里层循环控制列数（几个星星）
+      //   for (let j = 1; j <= i; j++) {
+      //     document.write('◆')
+      //   }
+      //   // 换行
+      //   document.write('<br>')
+      // }
+
+      //打印正三角
+      // let row=+prompt('请输入行数');
+      // for(let i=1;i<=5;i++){
+      //   for(let j=1;j<i*2;j++){
+      //     for(let z=1;z<=5-i)
+      //   }
+      // }
+
+      //打印九九乘法表
+      for (let i = 1; i <= 9; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write(`<span>${j}x${i}=${j * i}</span>`);
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>
