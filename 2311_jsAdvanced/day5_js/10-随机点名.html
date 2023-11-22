@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: #ffbfca;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      let arr = ["赵云", "黄忠", "关羽", "张飞", "马超", "刘备", "曹操"];
+      // 1. 得到一个随机数， 作为数组的索引号， 这个随机数 0~6
+      let random = Math.floor(Math.random() * arr.length);
+      // 2. 页面输出数组里面的元素
+      document.write(arr[random]);
+
+      // 3. splice(起始位置(下标), 删除几个元素)
+      arr.splice(random, 1);
+      console.log(arr);
+
+      //随机颜色案例
+      const div = document.querySelector("div");
+
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      function getColor(flag = true) {
+        if (flag) {
+          let arr = [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+          ];
+          let str = "#";
+          for (let i = 1; i <= 6; i++) {
+            let j = getRandom(0, 15);
+            str += arr[j];
+          }
+          return str;
+        } else {
+          let R = getRandom(0, 255);
+          let G = getRandom(0, 255);
+          let B = getRandom(0, 255);
+          return `rgb(${R}, ${G}, ${B})`;
+        }
+      }
+      let co = getColor();
+      console.log(co);
+
+      div.style.backgroundColor = co;
+    </script>
+  </body>
+</html>
