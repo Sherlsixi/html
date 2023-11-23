@@ -27,6 +27,18 @@
               <td>46</td>
               <td><a href="#">删除</a></td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>英语</td>
+              <td>80</td>
+              <td><a href="#">删除</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>数学</td>
+              <td>100</td>
+              <td><a href="#">删除</a></td>
+            </tr>
           </tbody>
           <tbody>
             <tr>
@@ -36,7 +48,14 @@
             </tr>
           </tbody>
 
-          <tfoot></tfoot>
+          <tfoot>
+            <tr>
+              <td colspan="5">
+                <span>总分：246</span>
+                <span style="margin-left: 50px">平均分：79</span>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>
@@ -48,28 +67,6 @@
         { subject: "数学", score: 80 },
         { subject: "英语", score: 100 },
       ];
-      const tbody = document.querySelector("tbody");
-      const tfoot = document.querySelector("tfoot");
-      let arr = [];
-      let sum = 0;
-      for (let i = 0; i < data.length; i++) {
-        arr.push(`<tr>
-            <td>${i + 1}</td>
-            <td>${data[i].subject}</td>
-            <td>${data[i].score}</td>
-            <td><a href="#">删除</a></td>
-          </tr>`);
-        sum += data[i].score;
-      }
-      tbody.innerHTML = arr.join("");
-      tfoot.innerHTML = `<tr>
-              <td colspan="5">
-                <span>总分：${sum}</span>
-                <span style="margin-left: 50px">平均分：${parseInt(
-                  sum / data.length
-                )}</span>
-              </td>
-            </tr>`;
     </script>
   </body>
 </html>

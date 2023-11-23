@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="box">我是文字的内容</div>
+    <ul class="nav">
+      <li>我的首页</li>
+      <li>产品介绍</li>
+      <li>联系方式</li>
+    </ul>
+    <script>
+      // const obj = {
+      //   name: 'pink老师'
+      // }
+      // console.log(obj.name)
+      // obj.name = 'red老师'
+      // 1. 获取元素
+      const box = document.querySelector(".box");
+      // 2. 修改文字内容  对象.innerText 属性
+      // console.log(box.innerText)  // 获取文字内容
+      // // box.innerText = '我是一个盒子'  // 修改文字内容
+      // box.innerText = '<strong>我是一个盒子</strong>'  // 不解析标签
+
+      // 3. innerHTML 解析标签
+      console.log(box.innerHTML);
+      // box.innerHTML = '我要更换'
+      box.innerHTML = "<strong>我要更换</strong>";
+
+      //练习获取DOM元素
+      const lis = document.querySelectorAll(".nav li");
+      console.log(lis);
+    </script>
+  </body>
+</html>

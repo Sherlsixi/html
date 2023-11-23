@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      //点名: 每次刷新网页运行, 在控制台 随机输出一位同学的名字 ["老赵", "老李", "小传", "小黑"]，如果输出了，则数组中删除这个名字
+      // let list = ["老赵", "老李", "小传", "小黑"];
+      // let random = Math.floor(Math.random() * list.length);
+      // console.log(list[random]);
+      // list.splice(random, 1);
+      // console.log(list);
+
+      console.log("----------------------");
+      //1. 声明一个变量per, 类型为对象类型
+      // 2. 该对象的属性为性别,年龄,爱好(3个)
+      // 3. 该对象的方法有 说话, 吃饭(2个)
+      // 4. 在控制台分别调用该对象的属性和方法
+      // let per = {
+      //   gender: "男",
+      //   age: 18,
+      //   hobby: "打游戏",
+      //   speak: function () {
+      //     alert("说话");
+      //   },
+      //   eat: function () {
+      //     alert("吃饭");
+      //   },
+      // };
+      // console.log(per.gender);
+      // console.log(per.age);
+      // console.log(per.hobby);
+      // per.speak();
+      // per.eat();
+
+      console.log("----------------------");
+
+      //1. 对象声明完毕后, 调用对象中的吃饭的方法
+      // 2. 提示: 对象中的方法本质是函数, 调用需要加()
+      // 3. 方法也可以传递参数的
+
+      console.log("----------------------");
+
+      //猜数字游戏，设定次数，最多猜8次
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      // let random = getRandom(10, 50);
+      // let isCorrect = false;
+      // for (let i = 1; i <= 8; i++) {
+      //   let num = +prompt("请猜一个10～50的数字");
+      //   if (num === random) {
+      //     alert("恭喜您猜对了");
+      //     isCorrect = true;
+      //     break;
+      //   } else if (num > random) {
+      //     alert("猜大了");
+      //   } else {
+      //     alert("猜小了");
+      //   }
+      // }
+      // if (!isCorrect) {
+      //   alert("很遗憾，猜的次数用完了");
+      // }
+
+      console.log("----------------------");
+
+      // 完成课堂随机生成颜色的案例。
+      const div = document.querySelector("div");
+      function getRandomcolor(flag = true) {
+        if (flag) {
+          let str = "#";
+          let arr = [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+          ];
+          for (let i = 1; i <= 6; i++) {
+            let random = Math.floor(Math.random() * arr.length);
+            str += arr[random];
+          }
+          return str;
+        } else {
+          let R = Math.floor(Math.random() * 256);
+          let G = Math.floor(Math.random() * 256);
+          let B = Math.floor(Math.random() * 256);
+          return `rgb(${R},${G},${B})`;
+        }
+      }
+      div.style.backgroundColor = `${getRandomcolor()}`;
+      console.log(getRandomcolor());
+    </script>
+  </body>
+</html>
