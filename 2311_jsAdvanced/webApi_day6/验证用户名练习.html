@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 600px;
+        margin: 100px auto;
+      }
+      span {
+        color: #999;
+        font-size: 12px;
+        padding-left: 20px;
+      }
+      .right {
+        background: url(./images/right.png) no-repeat center left;
+        color: green;
+      }
+      .wrong {
+        background: url(./images/error.png) no-repeat center left;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register">
+      <input type="text" class="ipt" />
+      <span class="">请输入6～16位英文字母、数字、下划线“_”或短横线“-”</span>
+    </div>
+    <script>
+      const ipt = document.querySelector(".ipt");
+      const msg = document.querySelector("span");
+      const reg = /^[a-zA-Z0-9-_]{6,16}$/;
+      ipt.addEventListener("blur", function () {
+        // console.log(str);
+        if (reg.test(this.value)) {
+          msg.className = "right";
+          msg.innerHTML = "输入正确";
+        } else {
+          msg.className = "wrong";
+          msg.innerHTML = "请输入6~16位的英文数字下划线";
+        }
+      });
+    </script>
+  </body>
+</html>
