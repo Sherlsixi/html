@@ -67,6 +67,22 @@
     </div>
 
     <!-- 数组比较多，放在了外接的js文件中 -->
-    <script></script>
+    <script src="hero.js"></script>
+    <script>
+      //渲染页面
+      function render(arr) {
+        let str = "";
+        arr.forEach((item) => {
+          const { icon, name, pay_type, hero_type } = item;
+          str += `<li >
+          <a href="#" target="_blank"><img src="${icon}" width="91" height="91" alt="${name}" />${name}</a>
+        </li>`;
+        });
+        document.querySelector(".herolist").innerHTML = str;
+      }
+      render(heroArr);
+
+      let lis = document.querySelectorAll(".types-ms>li");
+    </script>
   </body>
 </html>

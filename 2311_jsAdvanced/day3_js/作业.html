@@ -168,18 +168,27 @@
       // console.log(newArr);
 
       // 根据用户输入的个数，页面可以渲染对应王者荣耀英雄的个数
+      // let box = document.querySelector(".box");
+      // let arr = [];
+      // // console.log(arr);
+      // let num = +prompt("请输入个数：");
+      // for (let i = 0; i < num; i++) {
+      //   arr.push(
+      //     `<li><img src="题目/核心练习作业素材/images/${
+      //       i + 1
+      //     }.webp" alt="" /></li>`
+      //   );
+      // }
+      // box.innerHTML = arr.join("");
+
       let box = document.querySelector(".box");
-      let arr = [];
+      let str = "";
       // console.log(arr);
       let num = +prompt("请输入个数：");
-      for (let i = 0; i < num; i++) {
-        arr.push(
-          `<li><img src="题目/核心练习作业素材/images/${
-            i + 1
-          }.webp" alt="" /></li>`
-        );
+      for (let i = 1; i <= num; i++) {
+        str += `<li><img src="题目/核心练习作业素材/images/${i}.webp" alt="" /></li>`;
       }
-      box.innerHTML = arr.join("");
+      box.innerHTML = str;
     </script>
   </body>
 </html>
