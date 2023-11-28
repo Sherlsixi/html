@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //求和方法
+      // Array.prototype.sum = function () {
+      //   let sum = 0;
+      //   for (let i = 0; i < this.length; i++) {
+      //     sum += this[i];
+      //   }
+      //   return sum;
+      // };
+      // console.log(arr.sum());
+
+      Array.prototype.sum = function () {
+        return this.reduce((prev, item) => prev + item, 0);
+      };
+
+      //求最大值方法
+      Array.prototype.max = function () {
+        return Math.max(...this);
+      };
+      Array.prototype.min = function () {
+        return Math.min(...this);
+      };
+
+      const arr = [3, 4, 5, 7];
+      console.log(arr.sum());
+      console.log(arr.max());
+
+      const arr1 = [4, 7, 8, 12.5, 45.5, 2];
+      console.log(arr1.sum());
+      console.log(arr1.min());
+    </script>
+  </body>
+</html>

@@ -1,120 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/inputnumber.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>购物车</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/inputnumber.css" />
-  <link rel="stylesheet" href="./css/index.css" />
-  <title>购物车</title>
-</head>
+  <body>
+    <div class="app-container" id="app">
+      <!-- 顶部banner -->
+      <div class="banner-box">
+        <img src="./img/fruit.jpg" alt="" />
+      </div>
+      <!-- 面包屑 -->
+      <div class="breadcrumb">
+        <span>🏠</span>
+        /
+        <span>购物车</span>
+      </div>
+      <!-- 购物车主体 -->
+      <div class="main">
+        <div class="table">
+          <!-- 头部 -->
+          <div class="thead">
+            <div class="tr">
+              <div class="th">选中</div>
+              <div class="th th-pic">图片</div>
+              <div class="th">单价</div>
+              <div class="th num-th">个数</div>
+              <div class="th">小计</div>
+              <div class="th">操作</div>
+            </div>
+          </div>
+          <!-- 身体 -->
+          <div class="tbody">
+            <!-- 渲染需要的行 -->
 
-<body>
-  <div class="app-container" id="app">
-    <!-- 顶部banner -->
-    <div class="banner-box"><img src="http://autumnfish.cn/static/fruit.jpg" alt="" /></div>
-    <!-- 面包屑 -->
-    <div class="breadcrumb">
-      <span>🏠</span>
-      /
-      <span>购物车</span>
-    </div>
-    <!-- 购物车主体 -->
-    <div class="main">
-      <div class="table">
-        <!-- 头部 -->
-        <div class="thead">
-          <div class="tr">
-            <div class="th">选中</div>
-            <div class="th th-pic">图片</div>
-            <div class="th">单价</div>
-            <div class="th num-th">个数</div>
-            <div class="th">小计</div>
-            <div class="th">操作</div>
+            <!-- <div class="tr">
+              <div class="td"><input type="checkbox" checked /></div>
+              <div class="td">
+                <img src="./img/火龙果.png" alt="" />
+              </div>
+              <div class="td">6</div>
+              <div class="td">
+                <div class="my-input-number">
+                  <button class="decrease">-</button>
+                  <span class="my-input">2</span>
+                  <button class="increase">+</button>
+                </div>
+              </div>
+              <div class="td">12</div>
+              <div class="td"><button class="del">删除</button></div>
+            </div> -->
           </div>
         </div>
-        <!-- 身体 -->
-        <div class="tbody">
+        <!-- 底部 -->
+        <div class="bottom">
+          <!-- 全选 -->
+          <label class="check-all">
+            <input type="checkbox" checked />
+            全选
+          </label>
+          <div class="right-box">
+            <!-- 所有商品总价 -->
+            <span class="price-box"
+              >总价&nbsp;&nbsp;:&nbsp;&nbsp;¥&nbsp;<span class="price"
+                >24</span
+              ></span
+            >
+            <!-- 结算按钮 -->
+            <button class="pay">结算( 6 )</button>
+          </div>
+        </div>
+      </div>
+      <!-- 空车 -->
+      <div class="empty">🛒空空如也</div>
+    </div>
+    <script>
+      const dataArr = [
+        {
+          id: 1,
+          icon: "./img/火龙果.png",
+          isChecked: true,
+          num: 2,
+          price: 6,
+        },
+        {
+          id: 2,
+          icon: "./img/荔枝.png",
+          isChecked: false,
+          num: 7,
+          price: 20,
+        },
+        {
+          id: 3,
+          icon: "./img/榴莲.png",
+          isChecked: false,
+          num: 3,
+          price: 40,
+        },
+        {
+          id: 4,
+          icon: "./img/鸭梨.png",
+          isChecked: true,
+          num: 10,
+          price: 3,
+        },
+        {
+          id: 5,
+          icon: "./img/樱桃.png",
+          isChecked: false,
+          num: 20,
+          price: 34,
+        },
+      ];
 
-          <!-- 渲染需要的行 -->
-          <!-- 
-            <div class="tr">
-            <div class="td"><input type="checkbox" checked /></div>
-            <div class="td"><img src="http://autumnfish.cn/static/火龙果.png" alt="" /></div>
-            <div class="td">6</div>
+      const tbody = document.querySelector(".tbody");
+      const checkAll = document.querySelector(".check-all input");
+      const sumPrice = document.querySelector(".price-box .price");
+      const sumNum = document.querySelector(".pay");
+      //1.渲染页面
+      function render(arr) {
+        tbody.innerHTML = arr
+          .map((ele, index) => {
+            const { icon, isChecked, num, price } = ele;
+            const total = (price * num).toFixed(2);
+            return `
+          <div class="tr" data-id="${index}">
+            <div class="td"><input type="checkbox" ${
+              isChecked ? "checked" : ""
+            } /></div>
+            <div class="td"><img src="${icon}" alt="" /></div>
+            <div class="td">${price}</div>
             <div class="td">
               <div class="my-input-number">
                 <button class="decrease"> - </button>
-                <span class="my-input__inner">2</span>
+                <span class="my-input">${num}</span>
                 <button class="increase"> + </button>
               </div>
             </div>
-            <div class="td">12</div>
+            <div class="td">${total}</div>
             <div class="td"><button class="del">删除</button></div>
-          </div> 
-        -->
+          </div>
+          `;
+          })
+          .join("");
 
-        </div>
-      </div>
-      <!-- 底部 -->
-      <div class="bottom">
-        <!-- 全选 -->
-        <label class="check-all">
-          <input type="checkbox" />
-          全选
-        </label>
-        <div class="right-box">
-          <!-- 所有商品总价 -->
-          <span class="price-box">总价&nbsp;&nbsp;:&nbsp;&nbsp;¥&nbsp;<span class="price">24</span></span>
-          <!-- 结算按钮 -->
-          <button class="pay">结算( 6 )</button>
-        </div>
-      </div>
-    </div>
-    <!-- 空车 -->
-    <div class="empty">🛒空空如也</div>
-  </div>
-  <script>
-    const dataArr = [
-      {
-        id: 1,
-        icon: 'http://autumnfish.cn/static/火龙果.png',
-        isChecked: true,
-        num: 2,
-        price: 6,
-      },
-      {
-        id: 2,
-        icon: 'http://autumnfish.cn/static/荔枝.png',
-        isChecked: false,
-        num: 7,
-        price: 20,
-      },
-      {
-        id: 3,
-        icon: 'http://autumnfish.cn/static/榴莲.png',
-        isChecked: false,
-        num: 3,
-        price: 40,
-      },
-      {
-        id: 4,
-        icon: 'http://autumnfish.cn/static/鸭梨.png',
-        isChecked: true,
-        num: 10,
-        price: 3,
-      },
-      {
-        id: 5,
-        icon: 'http://autumnfish.cn/static/樱桃.png',
-        isChecked: false,
-        num: 20,
-        price: 34,
-      },
-    ]
+        //全选功能
+        checkAll.checked = arr.every((ele) => ele.isChecked === true);
+        //总价模块
+        const newArr = arr.filter((ele) => ele.isChecked);
+        // console.log(newArr);
+        sumPrice.innerHTML = newArr
+          .reduce((prev, item) => prev + item.price * item.num, 0)
+          .toFixed(2);
+        //结算商品数量
+        const num = newArr.reduce((prev, item) => prev + item.num, 0);
+        sumNum.innerHTML = `结算(${num})`;
+        //空购物车显示
+        const empty = document.querySelector(".empty");
+        empty.style.display = arr.length === 0 ? "block" : "none";
+      }
+      render(dataArr);
 
-  </script>
-</body>
+      //事件委托
+      tbody.addEventListener("click", function (e) {
+        const id = e.target.parentNode.parentNode.dataset.id;
+        // console.log(id);
+        //删除功能
+        if (e.target.className === "del") {
+          dataArr.splice(id, 1);
+          render(dataArr);
+        }
+        //小复选框全选
+        if (e.target.tagName === "INPUT") {
+          dataArr[id].isChecked = e.target.checked;
+          render(dataArr);
+        }
 
+        const idNum = e.target.parentNode.parentNode.parentNode.dataset.id;
+        //增加商品数
+        if (e.target.className === "increase") {
+          dataArr[idNum].num++;
+          render(dataArr);
+        }
+        if (e.target.className === "decrease") {
+          if (dataArr[idNum].num > 1) {
+            dataArr[idNum].num--;
+            render(dataArr);
+          }
+        }
+      });
+
+      //全选按钮功能
+      checkAll.addEventListener("click", function () {
+        dataArr.forEach((ele) => (ele.isChecked = this.checked));
+        render(dataArr);
+      });
+    </script>
+  </body>
 </html>

@@ -55,6 +55,10 @@
             <span class="ms-radio"><i class="i"></i></span>
             <label>辅助</label>
           </li>
+          <li data-type="7">
+            <span class="ms-radio"><i class="i"></i></span>
+            <label>啥也不是</label>
+          </li>
         </ul>
       </div>
       <div class="herolist-content">
@@ -83,6 +87,21 @@
       render(heroArr);
 
       let lis = document.querySelectorAll(".types-ms>li");
+      lis.forEach((item) => {
+        item.addEventListener("click", function () {
+          document.querySelector("li.current").classList.remove("current");
+          this.classList.add("current");
+          let newArr = heroArr;
+          if (+this.dataset.type !== 0) {
+            newArr = heroArr.filter(
+              (item) =>
+                item.hero_type === +this.dataset.type ||
+                item.pay_type === +this.dataset.ptype
+            );
+          }
+          render(newArr);
+        });
+      });
     </script>
   </body>
 </html>
