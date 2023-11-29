@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        width: 300px;
+        min-height: 100px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        position: fixed;
+        z-index: 999;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        background-color: #fff;
+      }
+
+      .modal .header {
+        line-height: 40px;
+        padding: 0 10px;
+        position: relative;
+        font-size: 20px;
+      }
+
+      .modal .header i {
+        font-style: normal;
+        color: #999;
+        position: absolute;
+        right: 15px;
+        top: -2px;
+        cursor: pointer;
+      }
+
+      .modal .body {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .modal .footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+      }
+
+      .modal .footer a {
+        padding: 3px 8px;
+        background: #ccc;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 2px;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+
+      .modal .footer a.submit {
+        background-color: #369;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="delete">删除</button>
+    <button id="login">登录</button>
+    <script>
+      function Modal(title = "", message = "") {
+        this.title = title;
+        this.message = message;
+        this.modalBox = document.createElement("div");
+        this.modalBox.className = "modal";
+        this.modalBox.innerHTML = `
+        <div class="header">${this.title} <i>x</i></div>
+        <div class="body">${this.message}</div>
+        `;
+        console.log(this.modalBox);
+      }
+      Modal.prototype.open = function () {
+        if (!document.querySelector(".modal")) {
+          document.body.append(this.modalBox);
+        }
+        this.modalBox.querySelector("i").addEventListener("click", () => {
+          console.log(this);
+          this.close();
+        });
+      };
+      Modal.prototype.close = function () {
+        this.modalBox.remove();
+      };
+
+      const del = document.querySelector("#delete");
+      const login = document.querySelector("#login");
+      del.addEventListener("click", function () {
+        const m = new Modal("温馨提示", "您没有权限删除");
+        m.open();
+      });
+      login.addEventListener("click", function () {
+        const n = new Modal("友情提示", "您还没有注册");
+        n.open();
+      });
+    </script>
+  </body>
+</html>
