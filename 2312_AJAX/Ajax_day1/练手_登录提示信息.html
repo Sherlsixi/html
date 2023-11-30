@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .box {
+        width: 500px;
+        margin: 100px auto;
+        border: 1px solid #333;
+        padding: 60px 40px 120px;
+      }
+      .alert {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h2>欢迎-登录</h2>
+        <div class="alert" role="alert"></div>
+        <div class="mb-3">
+          <label for="email" class="form-label">账号名</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">密码</label>
+          <input type="password" class="form-control" id="password" />
+        </div>
+
+        <button type="button" class="btn btn-primary">登录</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      //http://hmajax.itheima.net/api/login
+
+      function alertFn(message, status) {
+        const alert = document.querySelector(".alert");
+        alert.className = `alert alert-${status}`;
+        alert.style.display = "block";
+        alert.innerText = message;
+      }
+      document.querySelector(".btn").addEventListener("click", (e) => {
+        console.log(e);
+        const btn = e.target;
+        const username = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const reg1 = /^[a-zA-Z0-9\u4e00-\u9fa5]{8,}$/;
+        if (!reg1.test(username)) {
+          alertFn("账号名最少8位，中英文和数字组成", "danger");
+          return;
+        }
+        if (password.length < 6) {
+          alertFn("密码最少6位", "danger");
+          return;
+        }
+        btn.disabled = true;
+
+        axios({
+          url: "http://hmajax.itheima.net/api/login",
+          method: "post",
+          data: {
+            username,
+            password,
+          },
+        })
+          .then((res) => {
+            if (res.data.code === 10000) {
+              alertFn("登录成功", "success");
+            }
+            if (res.data.code === "10004") {
+              alertFn(res.data.message, "danger");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            if (error.response && error.response.data) {
+              alertFn(error.response.data.message, "danger");
+            } else {
+              alertFn(error.message, "danger");
+            }
+          })
+          .finally(() => (btn.disabled = false));
+      });
+    </script>
+  </body>
+</html>
