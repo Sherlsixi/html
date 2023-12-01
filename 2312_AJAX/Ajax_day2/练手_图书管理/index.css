@@ -1,0 +1,23 @@
+.container {
+  /* width: 900px; */
+  margin: 50px auto;
+}
+
+.container .top {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.table th,
+td {
+  text-align: center;
+}
+.table .del-btn {
+  color: orange;
+  cursor: pointer;
+}
+.table .edit-btn {
+  color: rgb(101, 170, 170);
+  cursor: pointer;
+}
