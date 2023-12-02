@@ -1,5 +1,6 @@
 const creator = "四夕";
 // 第一次渲染画面
+
 function getBooksList() {
   axios({
     url: "http://hmajax.itheima.net/api/books",
@@ -75,10 +76,11 @@ document.querySelector(".list").addEventListener("click", function (e) {
       url: `http://hmajax.itheima.net/api/books/${editId}`,
       method: "get",
     }).then((getRe) => {
-      const { bookname, author, publisher } = getRe.data.data;
-      addModal.querySelector("#bookname").value = bookname;
-      addModal.querySelector("#author").value = author;
-      addModal.querySelector("#publisher").value = publisher;
+      for (const key in getRe.data.data) {
+        if (key !== "id") {
+          addModal.querySelector(`#${key}`).value = getRe.data.data[key];
+        }
+      }
     });
     modal.show();
   }
