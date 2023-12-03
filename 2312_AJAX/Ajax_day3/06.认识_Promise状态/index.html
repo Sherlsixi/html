@@ -1,40 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>认识Promise状态</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>认识Promise状态</title>
-</head>
+  <body>
+    <script>
+      /**
+       * 目标：认识Promise状态
+       */
+      // 1. 创建Promise对象（pending-待定状态）
+      // const p = new Promise((resolve, reject) => {
+      //   // Promise对象创建时，这里的代码都会执行了
+      //   // 2. 执行异步代码
+      //   setTimeout(() => {
+      //     // resolve() => 'fulfilled状态-已兑现' => then()
+      //     resolve("模拟AJAX请求-成功结果");
+      //     // reject() => 'rejected状态-已拒绝' => catch()
+      //     reject(new Error("模拟AJAX请求-失败结果"));
+      //   }, 3000);
+      // });
+      // console.log(p);
 
-<body>
-  <script>
-    /**
-     * 目标：认识Promise状态
-    */
-    // 1. 创建Promise对象（pending-待定状态）
-    const p = new Promise((resolve, reject) => {
-      // Promise对象创建时，这里的代码都会执行了
-      // 2. 执行异步代码
-      setTimeout(() => {
-        // resolve() => 'fulfilled状态-已兑现' => then()
-        resolve('模拟AJAX请求-成功结果')
-        // reject() => 'rejected状态-已拒绝' => catch()
-        reject(new Error('模拟AJAX请求-失败结果'))
-      }, 2000)
-    })
-    console.log(p)
+      // // 3. 获取结果
+      // p.then((result) => {
+      //   console.log(result);
+      // }).catch((error) => {
+      //   console.log(error);
+      // });
 
-    // 3. 获取结果
-    p.then(result => {
-      console.log(result)
-    }).catch(error => {
-      console.log(error)
-    })
+      function MyPromise(callback) {
+        this.state = "pending";
+        this.successCallback = null;
+        this.errorCallback = null;
+        callback(
+          (successData) => {
+            if (this.state === "pending") {
+              this.state = "fulfilled";
+              if (this.successCallback !== null) {
+                this.successCallback(successData);
+              }
+            }
+          },
+          (errorData) => {
+            if (this.state === "pending") {
+              this.state = "rejected";
+              if (this.errorCallback !== null) {
+                this.errorCallback(errorData);
+              }
+            }
+          }
+        );
+      }
+      console.log(MyPromise.prototype);
+      MyPromise.prototype = {
+        constructor: MyPromise,
+        then: function (successCallback) {
+          this.successCallback = successCallback;
+          return this;
+        },
+        catch: function (errorCallback) {
+          this.errorCallback = errorCallback;
+        },
+      };
+      console.log(MyPromise.prototype);
 
-
-  </script>
-</body>
-
+      const myPromise = new MyPromise(function (resolve, reject) {
+        setTimeout(() => {
+          // resolve("成功结果");
+          reject("失败结果");
+        }, 2000);
+      });
+      console.log(myPromise);
+      myPromise
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
 </html>
