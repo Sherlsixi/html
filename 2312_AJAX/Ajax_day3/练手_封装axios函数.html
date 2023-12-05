@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="reg-btn">注册</button>
+    <script>
+      function myAxios(config) {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          if (config.params) {
+            const paramsObj = new URLSearchParams(config.params);
+            const queryString = paramsObj.toString();
+            config.url += `?${queryString}`;
+          }
+          xhr.open(config.method || "GET", config.url);
+
+          xhr.addEventListener("loadend", () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(JSON.parse(xhr.response));
+            } else {
+              reject(new Error(xhr.response));
+            }
+          });
+          if (config.data) {
+            xhr.setRequestHeader("Content-Type", "application/json");
+            const jsonStr = JSON.stringify(config.data);
+            xhr.send(jsonStr);
+          } else {
+            xhr.send();
+          }
+        });
+      }
+      document.querySelector(".reg-btn").addEventListener("click", () => {
+        myAxios({
+          url: "https://hmajax.itheima.net/api/register",
+          method: "post",
+          data: {
+            username: "sixi6666",
+            password: "12345678",
+          },
+        })
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.dir(error);
+          });
+      });
+    </script>
+  </body>
+</html>

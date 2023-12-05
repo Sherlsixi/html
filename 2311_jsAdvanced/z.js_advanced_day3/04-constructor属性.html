@@ -22,8 +22,8 @@
       Star.prototype = {
         // 从新指回创造这个原型对象的 构造函数
         // constructor: Star,
-        sing: function () {
-          console.log("唱歌");
+        sing: function (song) {
+          console.log(song);
         },
         dance: function () {
           console.log("跳舞");
@@ -31,7 +31,7 @@
       };
       console.log(Star.prototype);
       const star = new Star();
-      star.sing();
+      star.sing("lalala");
 
       // console.log(Star.prototype.constructor)
 
