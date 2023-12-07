@@ -5,6 +5,7 @@
  *  1.3 切换城市，设置地区下拉菜单数据
  */
 
+//我的练习
 axios({
   url: "https://hmajax.itheima.net/api/province",
 }).then((result) => {
@@ -61,17 +62,21 @@ document.querySelector(".city").addEventListener("change", async (e) => {
   document.querySelector(".area").innerHTML =
     '<option value="">地区</option>' + areaStr;
 });
-document.querySelector(".submit").addEventListener("click", () => {
+document.querySelector(".submit").addEventListener("click", async () => {
   const form = document.querySelector(".info-form");
   const data = serialize(form, { hash: true, empty: true });
-  console.log(data);
-  axios({
-    url: "https://hmajax.itheima.net/api/feedback",
-    method: "post",
-    data,
-  }).then((result) => {
-    console.log(result);
-  });
+  try {
+    const result = await axios({
+      url: "https://hmajax.itheima.net/api/feedback",
+      method: "post",
+      data,
+    });
+    // console.log(result);
+    alert(result.data.message);
+  } catch (error) {
+    console.dir(error);
+    alert(error.response.data.message);
+  }
 });
 
 // 1.1 设置省份下拉菜单数据
