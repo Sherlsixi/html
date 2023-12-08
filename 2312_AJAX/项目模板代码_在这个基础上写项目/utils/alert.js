@@ -6,14 +6,17 @@
  * @param {*} msg 提示消息
  */
 function myAlert(isSuccess, msg) {
-  const myAlert = document.querySelector('.alert')
-  myAlert.classList.add(isSuccess ? 'alert-success' : 'alert-danger')
-  myAlert.innerHTML = msg
-  myAlert.classList.add('show')
+  const myAlert = document.querySelector(".alert");
+  myAlert.classList.add(isSuccess ? "alert-success" : "alert-danger");
+  myAlert.innerHTML = msg;
+  myAlert.classList.add("show");
 
-  setTimeout(() => {
-    myAlert.classList.remove(isSuccess ? 'alert-success' : 'alert-danger')
-    myAlert.innerHTML = ''
-    myAlert.classList.remove('show')
-  }, 2000)
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      myAlert.classList.remove(isSuccess ? "alert-success" : "alert-danger");
+      myAlert.innerHTML = "";
+      myAlert.classList.remove("show");
+      resolve();
+    }, 2000);
+  });
 }
