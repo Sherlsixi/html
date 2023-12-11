@@ -7,7 +7,6 @@
   axios({
     url: "/v1_0/channels",
   }).then((res) => {
-    console.log(res.data.data.channels);
     const channelsStr = res.data.data.channels
       .map((item) => {
         return `<option value="${item.id}">${item.name}</option>`;
@@ -25,7 +24,6 @@
    */
   const img = document.querySelector(".rounded");
   document.querySelector(".img-file").addEventListener("change", (e) => {
-    // console.log(e.target.files[0]);
     const fd = new FormData();
     fd.append("image", e.target.files[0]);
     axios({
@@ -35,14 +33,11 @@
       data: fd,
     })
       .then((res) => {
-        console.log(res.data.data);
         img.src = res.data.data.url;
         img.style.display = "block";
         document.querySelector(".place").style.display = "none";
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   });
   /**
    * 目标3：发布文章保存
@@ -54,7 +49,6 @@
   document.querySelector(".send").addEventListener("click", () => {
     const form = document.querySelector(".art-form");
     const data = serialize(form, { hash: true, empty: true });
-    console.log(data);
     const content = editor.getHtml();
     data.content = content;
     data.cover = { type: 1, images: [`${img.src}`] };
@@ -64,7 +58,6 @@
       data,
     }).then((res) => {
       myAlert(true, "文章发布成功");
-      console.log(res);
       location.href = "../content/index.html";
     });
   });

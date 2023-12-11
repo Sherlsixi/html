@@ -17,7 +17,6 @@ loginBtn.addEventListener("click", () => {
     data,
   })
     .then((res) => {
-      console.log(res.data.data);
       const { token, refresh_token } = res.data.data;
       sessionStorage.setItem("token", token);
       return myAlert(true, "登录成功");

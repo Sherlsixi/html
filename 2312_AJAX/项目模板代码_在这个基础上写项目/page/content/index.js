@@ -31,7 +31,6 @@
         per_page: 2,
       },
     }).then((res) => {
-      console.log(res.data.data);
       const articlesList = res.data.data;
       const htmlStr = articlesList.results
         .map((item) => {
@@ -100,7 +99,6 @@
   axios({
     url: "/v1_0/channels",
   }).then((res) => {
-    console.log(res.data.data.channels);
     const channelsStr = res.data.data.channels
       .map((item) => {
         return `<option value="${item.id}">${item.name}</option>`;
@@ -112,7 +110,6 @@
   document.querySelector(".sel-btn").addEventListener("click", (e) => {
     const form = document.querySelector(".sel-form");
     const data = serialize(form, { hash: true, empty: true });
-    console.log(data);
     render(data);
   });
   /**
@@ -144,16 +141,23 @@
    *  4.4 重新获取文章列表，并覆盖展示
    *  4.5 删除最后一页的最后一条，需要自动向前翻页
    */
-  document.querySelector(".art-list").addEventListener("click", (e) => {
+  document.querySelector(".art-list").addEventListener("click", async (e) => {
     if (e.target.classList.contains("del")) {
       const delId = e.target.parentNode.dataset.id;
-      console.log(delId);
-      axios({
+      const res = await axios({
         url: `/v1_0/mp/articles/${delId}`,
         method: "delete",
       });
+
+      const children = document.querySelector(".art-list").children;
+      if (children.length === 1 && conditions.page !== 1) {
+        conditions.page--;
+        document.querySelector(
+          ".page-now"
+        ).innerHTML = `第${conditions.page}页`;
+      }
+      render(conditions);
     }
-    console.log(e.target);
   });
   // 点击编辑时，获取文章 id，跳转到发布文章页面传递文章 id 过去
 })();
