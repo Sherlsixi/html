@@ -56,9 +56,9 @@
           <td>
             <span>${item.like_count}</span>
           </td>
-          <td>
+          <td data-id="${item.id}">
             <i class="bi bi-pencil-square edit"></i>
-            <i class="bi bi-trash3 del" data-id='${item.id}'></i>
+            <i class="bi bi-trash3 del"></i>
           </td>
         </tr>
         `;
@@ -145,13 +145,15 @@
    *  4.5 删除最后一页的最后一条，需要自动向前翻页
    */
   document.querySelector(".art-list").addEventListener("click", (e) => {
-    // if (e.target.classList.contains("del")) {
-    //   axios({
-    //     url: "/v1_0/mp/articles/:target",
-    //     method: "delete",
-    //   });
-    // }
-    // console.log(e.target);
+    if (e.target.classList.contains("del")) {
+      const delId = e.target.parentNode.dataset.id;
+      console.log(delId);
+      // axios({
+      //   url: "/v1_0/mp/articles/:target",
+      //   method: "delete",
+      // });
+    }
+    console.log(e.target);
   });
   // 点击编辑时，获取文章 id，跳转到发布文章页面传递文章 id 过去
 })();
