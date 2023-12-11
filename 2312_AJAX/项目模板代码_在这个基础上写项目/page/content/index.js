@@ -148,10 +148,10 @@
     if (e.target.classList.contains("del")) {
       const delId = e.target.parentNode.dataset.id;
       console.log(delId);
-      // axios({
-      //   url: "/v1_0/mp/articles/:target",
-      //   method: "delete",
-      // });
+      axios({
+        url: `/v1_0/mp/articles/${delId}`,
+        method: "delete",
+      });
     }
     console.log(e.target);
   });
