@@ -3,10 +3,12 @@
 const { createEditor, createToolbar } = window.wangEditor;
 
 const editorConfig = {
-  placeholder: "Type here...",
+  placeholder: "发布文章内容...",
   onChange(editor) {
     const html = editor.getHtml();
+    // console.log("editor content", html);
     // 也可以同步到 <textarea>
+    document.querySelector(".publish-content").value = html;
   },
 };
 

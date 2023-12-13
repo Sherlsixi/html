@@ -17,7 +17,7 @@ loginBtn.addEventListener("click", () => {
     data,
   })
     .then((res) => {
-      const { token, refresh_token } = res.data.data;
+      const { token, refresh_token } = res.data;
       sessionStorage.setItem("token", token);
       return myAlert(true, "登录成功");
     })
@@ -25,7 +25,7 @@ loginBtn.addEventListener("click", () => {
       location.href = "../content/index.html";
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
       if (error.response && error.response.data) {
         myAlert(false, error.response.data.message);
       } else {
