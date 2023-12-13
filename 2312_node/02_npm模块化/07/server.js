@@ -7,10 +7,10 @@
  */
 
 // 格式化日期
-const dayjs = require('dayjs')
-const nowDateStr = dayjs().format('YYYY-MM-DD')
-console.log(nowDateStr)
+const dayjs = require("dayjs");
+const nowDateStr = dayjs().format("YYYY-MM-DD");
+console.log(nowDateStr);
 
 // 求数组里最大值
-const _ = require('lodash')
-console.log(_.max([1, 10, 2, 3, 4, 55]))
+const _ = require("lodash");
+console.log(_.max([1, 10, 2, 3, 4, 45]));
