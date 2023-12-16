@@ -45,7 +45,7 @@
           document.querySelector(".city").innerHTML = cname;
           // 3. 得到-获取地区Promise对象
           return axios({
-            url: "http://hmajax.itheima.net/api/area1",
+            url: "http://hmajax.itheima.net/api/area",
             params: { pname, cname },
           });
         })

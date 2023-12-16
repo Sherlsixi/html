@@ -6,6 +6,7 @@
  *  1.3 写入到新的 html 文件中
  */
 // 1.1 读取源 html 文件内容
+//我的练手
 const fs = require("fs");
 const path = require("path");
 console.log(__dirname);

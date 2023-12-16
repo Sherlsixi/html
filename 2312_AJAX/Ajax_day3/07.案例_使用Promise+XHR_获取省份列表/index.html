@@ -18,7 +18,7 @@
        */
       const p = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
-        xhr.open("get", "https://hmajax.itheima.net/api/provinceh");
+        xhr.open("get", "https://hmajax.itheima.net/api/province");
         xhr.addEventListener("loadend", () => {
           if (xhr.status >= 200 && xhr.status < 300) {
             resolve(JSON.parse(xhr.response));
@@ -31,7 +31,7 @@
       p.then((result) => {
         document.querySelector(".my-p").innerHTML = result.list.join("<br>");
       }).catch((error) => {
-        console.log(error);
+        console.dir(error);
         document.querySelector(".my-p").innerHTML = error.message;
       });
 

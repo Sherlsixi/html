@@ -21,8 +21,8 @@
   -->
     <script src="./lib/form-serialize.js"></script>
     <script>
-      //我的练手
       document.querySelector(".btn").addEventListener("click", () => {
+        //我的练手
         const form = document.querySelector(".example-form");
         const data = serialize(form, { hash: true, empty: true });
         /**
@@ -39,9 +39,9 @@
          *    - false：不获取空值
          */
         // const form = document.querySelector('.example-form')
-        // const data = serialize(form, { hash: true, empty: true })
-        // const data = serialize(form, { hash: false, empty: true })
-        // const data = serialize(form, { hash: true, empty: false })
+        // const data = serialize(form, { hash: true, empty: true });
+        // const data = serialize(form, { hash: false, empty: true });
+        // const data = serialize(form, { hash: true, empty: false });
         console.log(data);
       });
     </script>

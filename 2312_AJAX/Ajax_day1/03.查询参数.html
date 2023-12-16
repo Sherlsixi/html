@@ -13,6 +13,9 @@
     值: 省份名字
   -->
     <p></p>
+    <div></div>
+    <span>["haha", "hehe", "xixi"]</span>
+    <input type="text" value="nihao" placeholder="please" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       axios({
@@ -24,7 +27,9 @@
         },
       }).then((result) => {
         console.log(result.data.list);
+
         document.querySelector("p").innerHTML = result.data.list.join("<br>");
+        document.querySelector("div").innerHTML = ["haha", "hehe", "xixi"];
       });
     </script>
   </body>

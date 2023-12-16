@@ -8,7 +8,7 @@
 // 1.1 加载 http 模块，创建 Web 服务对象
 const http = require("http");
 const server = http.createServer((req, res) => {
-  console.log(req);
+  // console.log(req);
   res.setHeader("Content-Type", "text/plain;charset=utf-8");
   res.end("请求成功");
 });
