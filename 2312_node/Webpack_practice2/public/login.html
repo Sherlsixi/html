@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>黑马头条-数据管理平台</title>
+    <% if(htmlWebpackPlugin.options.useCdn){ %>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <% } %>
   </head>
 
   <body>
@@ -39,5 +45,9 @@
         </form>
       </div>
     </div>
+    <% if(htmlWebpackPlugin.options.useCdn){ %>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <% } %>
   </body>
 </html>
