@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsx小练习</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      const data = ["Angular", "React", "Vue"];
+
+      const VDOM = (
+        <div>
+          <h1>前端js框架列表</h1>
+          <ul>
+            {data.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      );
+      ReactDOM.render(VDOM, document.getElementById("test"));
+    </script>
+  </body>
+</html>

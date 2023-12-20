@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>state</title>
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <div id="test"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Weather extends React.Component {
+        constructor(props) {
+          super(props);
+          //初始化状态
+          this.state = { isHot: true, wind: "微风" };
+          this.changeWeather = this.changeWeather.bind(this);
+        }
+        render() {
+          //读取状态
+          const { isHot, wind } = this.state;
+          return (
+            <h1 onClick={this.changeWeather}>
+              今天天气很{isHot ? "炎热" : "凉爽"},{wind}
+            </h1>
+          );
+        }
+        changeWeather() {
+          // console.log(this);
+          const isHot = this.state.isHot;
+          //严重注意：状态必须通过setState进行更新
+          this.setState({ isHot: !isHot });
+
+          //严重注意：状态（state）不可直接更改，下面这行就是直接更改
+          // this.state.isHot = !isHot;
+        }
+      }
+      ReactDOM.render(<Weather />, document.getElementById("test"));
+    </script>
+  </body>
+</html>

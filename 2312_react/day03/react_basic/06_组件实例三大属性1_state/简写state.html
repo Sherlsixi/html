@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>state</title>
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <div id="test"></div>
+    <div id="test2"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Weather extends React.Component {
+        state = { isHot: true, wind: "微风" };
+        render() {
+          const { isHot, wind } = this.state;
+          return (
+            <h1 onClick={this.changeWeather}>
+              今天天气很{isHot ? "炎热" : "凉爽"},{wind}
+            </h1>
+          );
+        }
+        changeWeather = () => {
+          const isHot = this.state.isHot;
+          this.setState({ isHot: !isHot });
+        };
+      }
+
+      function Weather2() {
+        const [state, setState] = React.useState({ isHot: true });
+        const changeWeather = () => {
+          setState({
+            ...state,
+            isHot: !state.isHot,
+          });
+        };
+        return (
+          <h1 onClick={changeWeather}>
+            今天天气很{state.isHot ? "炎热" : "凉爽"}
+          </h1>
+        );
+      }
+      ReactDOM.render(<Weather />, document.getElementById("test"));
+      ReactDOM.render(<Weather2 />, document.getElementById("test2"));
+    </script>
+  </body>
+</html>
