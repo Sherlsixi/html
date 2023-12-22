@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>回调ref中调用次数的问题</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Demo extends React.Component {
+        state = { isHot: true };
+        changeWeather = () => {
+          const { isHot } = this.state;
+          this.setState({ isHot: !isHot });
+        };
+        setInputRef = (c) => {
+          this.input1 = c;
+          console.log("##", c);
+        };
+        showData = () => {
+          // console.log(this);
+          const { input1 } = this;
+          alert(input1.value);
+        };
+
+        render() {
+          const { isHot } = this.state;
+          return (
+            <div>
+              <h2>今天天气很{isHot ? "炎热" : "凉爽"}</h2>
+              {/*<input ref={(c) => {this.input1 = c;console.log("##", c);}} type="text" placeholder="点击弹出输入信息"/>*/}
+              <input
+                ref={this.setInputRef}
+                type="text"
+                placeholder="点击弹出输入信息"
+              />
+              <button onClick={this.showData}>点我弹出输入信息</button>
+              <button onClick={this.changeWeather}>点我切换天气</button>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Demo />, document.getElementById("test"));
+    </script>
+  </body>
+</html>

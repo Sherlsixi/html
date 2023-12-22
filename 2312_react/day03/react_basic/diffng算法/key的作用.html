@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>key的作用</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script src="../js/17.0.1/react.development.js"></script>
+    <script src="../js/17.0.1/react-dom.development.js"></script>
+    <script src="../js/17.0.1/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Person extends React.Component {
+        state = {
+          person: [
+            { id: 1, name: "小王", age: 18 },
+            { id: 2, name: "小李", age: 19 },
+          ],
+        };
+        add = () => {
+          const { person } = this.state;
+          const p = { id: person.length + 1, name: "小周", age: 20 };
+          this.setState({ person: [p, ...person] });
+        };
+        render() {
+          return (
+            <div>
+              <h1>展示人员信息</h1>
+              <button onClick={this.add}>添加人员</button>
+              <h3>使用index（索引号）作为key</h3>
+              <ul>
+                {this.state.person.map((personObj, index) => {
+                  return (
+                    <li key={index}>
+                      {personObj.name}----{personObj.age}
+                      <input type="text" />
+                    </li>
+                  );
+                })}
+              </ul>
+              <br />
+              <br />
+              <h3>使用id（数据的唯一标识）作为key</h3>
+              <ul>
+                {this.state.person.map((personObj, index) => {
+                  return (
+                    <li key={personObj.id}>
+                      {personObj.name}----{personObj.age}
+                      <input type="text" />
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Person />, document.getElementById("test"));
+    </script>
+  </body>
+</html>

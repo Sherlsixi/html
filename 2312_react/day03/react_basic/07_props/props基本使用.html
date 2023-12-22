@@ -12,6 +12,7 @@
     <script src="../js/react.development.js"></script>
     <script src="../js/react-dom.development.js"></script>
     <script src="../js/babel.min.js"></script>
+    <script src="../js/prop-types.js"></script>
 
     <script type="text/babel">
       class Person extends React.Component {
@@ -27,18 +28,32 @@
           );
         }
       }
+      Person.propTypes = {
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number,
+        gender: PropTypes.string,
+        speak: PropTypes.func,
+      };
+      Person.defaultProps = {
+        age: 18,
+        gender: "男",
+      };
 
       ReactDOM.render(
         <Person name="tom" age={18} gender="女" />,
         document.getElementById("test1")
       );
       ReactDOM.render(
-        <Person name="tony" age={19} gender="男" />,
+        <Person name="tony" age={19} gender="男" speak={speak} />,
         document.getElementById("test2")
       );
 
       const p = { name: "pink", age: 18, gender: "男" };
       ReactDOM.render(<Person {...p} />, document.getElementById("test3"));
+
+      function speak() {
+        console.log("我说话了");
+      }
     </script>
   </body>
 </html>

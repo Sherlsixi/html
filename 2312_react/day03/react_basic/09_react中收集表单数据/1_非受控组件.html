@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1_非受控组件</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Login extends React.Component {
+        handleSubmit = (event) => {
+          event.preventDefault();
+          const { uname, pwd } = this;
+          alert(`输入的用户名是${uname.value},输入的密码是${pwd.value}`);
+        };
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <input
+                ref={(c) => (this.uname = c)}
+                type="text"
+                placeholder="请输入用户名"
+                name="username"
+              />
+              <input
+                ref={(c) => (this.pwd = c)}
+                type="password"
+                placeholder="请输入密码"
+                name="password"
+              />
+              <button>登录</button>
+            </form>
+          );
+        }
+      }
+      ReactDOM.render(<Login />, document.getElementById("test"));
+    </script>
+  </body>
+</html>
