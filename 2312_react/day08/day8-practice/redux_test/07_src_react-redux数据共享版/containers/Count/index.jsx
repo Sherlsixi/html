@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  decrement,
-  increment,
-  incrementAsync,
+  createDecrementAction,
+  createIncrementAction,
+  createIncrementAsyncAction,
 } from "../../redux/actions/count";
 
 class Count extends Component {
@@ -11,21 +11,21 @@ class Count extends Component {
 
   increment = () => {
     const { value } = this.selectNumber;
-    this.props.increment(value * 1);
+    this.props.jia(value * 1);
   };
   decrement = () => {
     const { value } = this.selectNumber;
-    this.props.decrement(value * 1);
+    this.props.jian(value * 1);
   };
   incrementIfOdd = () => {
     const { value } = this.selectNumber;
     if (this.props.count % 2 !== 0) {
-      this.props.increment(value * 1);
+      this.props.jia(value * 1);
     }
   };
   incrementAsync = () => {
     const { value } = this.selectNumber;
-    this.props.incrementAsync(value * 1, 1000);
+    this.props.jiaAsync(value * 1, 1000);
   };
   render() {
     return (
@@ -52,8 +52,8 @@ export default connect(
     pCount: state.persons.length,
   }),
   {
-    increment,
-    decrement,
-    incrementAsync,
+    jia: createIncrementAction,
+    jian: createDecrementAction,
+    jiaAsync: createIncrementAsyncAction,
   }
 )(Count);

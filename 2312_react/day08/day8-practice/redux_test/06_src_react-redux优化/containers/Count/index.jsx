@@ -1,36 +1,36 @@
-import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  decrement,
-  increment,
-  incrementAsync,
-} from "../../redux/actions/count";
+  createDecrementAction,
+  createIncrementAction,
+  createIncrementAsyncAction,
+} from "../../redux/count_action";
+import React, { Component } from "react";
 
 class Count extends Component {
   state = { carName: "bentz" };
 
   increment = () => {
     const { value } = this.selectNumber;
-    this.props.increment(value * 1);
+    this.props.jia(value * 1);
   };
   decrement = () => {
     const { value } = this.selectNumber;
-    this.props.decrement(value * 1);
+    this.props.jian(value * 1);
   };
   incrementIfOdd = () => {
     const { value } = this.selectNumber;
     if (this.props.count % 2 !== 0) {
-      this.props.increment(value * 1);
+      this.props.jia(value * 1);
     }
   };
   incrementAsync = () => {
     const { value } = this.selectNumber;
-    this.props.incrementAsync(value * 1, 1000);
+    this.props.jiaAsync(value * 1, 1000);
   };
   render() {
+    // console.log(this.props);
     return (
       <div>
-        <h1>我是求和组件,下方组件人数为{this.props.pCount}</h1>
         <h2>当前求和为：{this.props.count}</h2>
         <select ref={(c) => (this.selectNumber = c)}>
           <option value="1">1</option>
@@ -47,13 +47,26 @@ class Count extends Component {
 }
 
 export default connect(
-  (state) => ({
-    count: state.count,
-    pCount: state.persons.length,
-  }),
+  //mapStateToProps87
+  (state) => ({ count: state }),
+
+  //mapDispatchToProps的一般写法
+  /* dispatch=>({
+    jia: (number) => {
+      dispatch(createIncrementAction(number));
+    },
+    jian: (number) => {
+      dispatch(createDecrementAction(number));
+    },
+    jiaAsync: (number, time) => {
+      dispatch(createIncrementAsyncAction(number, time));
+    },
+  }) */
+
+  //mapDispatchToProps的简写
   {
-    increment,
-    decrement,
-    incrementAsync,
+    jia: createIncrementAction,
+    jian: createDecrementAction,
+    jiaAsync: createIncrementAsyncAction,
   }
 )(Count);
