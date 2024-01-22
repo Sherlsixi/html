@@ -1,1 +1,18 @@
-{}
+{
+  "include": ["./src/**/*"],
+  // "exclude": ["./src/hello/**/*"]//可选项
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ES2015",
+    // "lib": ["ES6", "dom"],
+    "outDir": "./dist",
+    // "outFile": "./dist/app.js"
+    "allowJs": true,
+    "checkJs": true,
+    "removeComments": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "strict": true,
+    "alwaysStrict": true
+  }
+}
