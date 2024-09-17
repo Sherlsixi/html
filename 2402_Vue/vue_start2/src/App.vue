@@ -73,9 +73,11 @@ const childMsg = ref("no child message yet");
 import { ref } from "vue";
 import ChildComp from "./components/ChildComp.vue";
 const msg = ref("from parent");
-// 修改一下测试github
+
 </script>
 
 <template>
   <ChildComp>{{ msg }}</ChildComp>
 </template>
+
+
