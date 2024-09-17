@@ -73,7 +73,7 @@ const childMsg = ref("no child message yet");
 import { ref } from "vue";
 import ChildComp from "./components/ChildComp.vue";
 const msg = ref("from parent");
-
+// 给这个仓库单独设置git user.name user.email
 </script>
 
 <template>
