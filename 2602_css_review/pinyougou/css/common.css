@@ -1,0 +1,182 @@
+/* 声明字体图标 */
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?tomleg");
+  src:
+    url("../fonts/icomoon.eot?tomleg#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?tomleg") format("truetype"),
+    url("../fonts/icomoon.woff?tomleg") format("woff"),
+    url("../fonts/icomoon.svg?tomleg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.style_red {
+  color: #c81623;
+}
+.shortcut {
+  height: 31px;
+  line-height: 31px;
+  background-color: #f1f1f1;
+}
+.shortcut ul li {
+  float: left;
+}
+.shortcut .fr ul li:nth-child(even) {
+  width: 1px;
+  height: 12px;
+  background-color: #666;
+  margin: 9px 15px 0;
+}
+.arrow-icon::after {
+  content: "\e91e";
+  font-family: "icomoon";
+  margin-left: 6px;
+}
+.header {
+  position: relative;
+  height: 105px;
+}
+.logo {
+  position: absolute;
+  top: 25px;
+  width: 171px;
+  height: 61px;
+  /* background-color: aqua; */
+}
+.logo h1 a {
+  display: block;
+  width: 171px;
+  height: 61px;
+  background: url(../images/logo.png) no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.search {
+  position: absolute;
+  top: 25px;
+  left: 346px;
+  width: 538px;
+  height: 36px;
+  background-color: #666;
+  border: 2px solid #b1191a;
+}
+.search input {
+  float: left;
+  width: 454px;
+  height: 32px;
+  padding-left: 10px;
+}
+.search button {
+  float: left;
+  width: 80px;
+  height: 32px;
+  background-color: #b1191a;
+  font-size: 16px;
+  color: #fff;
+}
+.hotwords {
+  position: absolute;
+  top: 66px;
+  left: 346px;
+}
+.hotwords a {
+  margin: 0 10px;
+}
+.shopcar {
+  position: absolute;
+  top: 25px;
+  right: 60px;
+  width: 140px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  background-color: #f7f7f7;
+}
+.shopcar::before {
+  content: "\e93a";
+  font-family: "icomoon";
+  margin-right: 5px;
+  color: #b1191a;
+}
+.shopcar::after {
+  content: "\e920";
+  font-family: "icomoon";
+  margin-left: 10px;
+}
+.shopcar .count {
+  position: absolute;
+  top: -5px;
+  left: 105px;
+  height: 14px;
+  line-height: 14px;
+  color: #fff;
+  background-color: #e60012;
+  padding: 0 5px;
+  border-radius: 7px 7px 7px 0;
+}
+.nav {
+  height: 47px;
+  border-bottom: 2px solid #b1191a;
+}
+.nav .dropdown {
+  float: left;
+  width: 210px;
+  height: 45px;
+  background-color: #b1191a;
+}
+.dropdown .dt {
+  line-height: 45px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+.dropdown .dd {
+  width: 210px;
+  height: 465px;
+  background-color: #c81623;
+  margin-top: 2px;
+}
+.dropdown .dd ul li {
+  position: relative;
+  height: 31px;
+  line-height: 31px;
+  padding-left: 12px;
+}
+.dropdown .dd ul li::after {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  color: #fff;
+  content: "\e920";
+  font-family: "icomoon";
+  font-size: 14px;
+}
+.dropdown .dd ul li a {
+  font-size: 14px;
+  color: #fff;
+}
+.nav .nav_items {
+  float: left;
+}
+.nav_items ul li {
+  float: left;
+}
+.nav_items ul li a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  padding: 0 25px;
+}
